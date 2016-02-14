@@ -1,6 +1,6 @@
 /*
 Theme Name: Our Savior Theme
-Theme URI: http://jimmypautz.com
+Theme URI: https://github.com/ultimatejimmy/oursavior-theme
 Author: Jimmy Pautz
 Author URI: http://jimmypautz.com
 Description: Theme for Our Savior Lutheran Church
@@ -42,18 +42,32 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+# Icon Font
+--------------------------------------------------------------*/
+@import url("http://weloveiconfonts.com/api/?family=entypo");
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+/*--------------------------------------------------------------
 # Stylus variables
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 html {
-  font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 body {
   margin: 0;
+}
+#top-bar,
+#main-header,
+#content {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 article,
 aside,
@@ -226,25 +240,26 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-html,
-font-size 62.5%,
+html {
+  font-size: 62.5%;
+}
 body,
 button,
 input,
 select,
-textarea,
-color #404040,
-font-family 'Lato',
-sans-serif,
-font-size 1.6rem,
-line-height 1.5,
+textarea {
+  color: #404040;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  clear: both;
+  font-family: 'Raleway', sans-serif;
 }
 p {
   margin-bottom: 1.5em;
@@ -455,6 +470,70 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+#top-bar-container {
+  width: 100%;
+  background-image: url("img/bg/binding_dark.png");
+  height: 60px;
+}
+#top-bar-container #search-bar {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+  top: 10px;
+}
+#top-bar-container #search-bar input#search {
+  width: 200px;
+  height: 30px;
+  background: #2b303b;
+  border: none;
+  font-size: 1.6rem;
+  float: left;
+  color: #fffff0;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: outline 0.55s ease;
+  -moz-transition: outline 0.55s ease;
+  -ms-transition: outline 0.55s ease;
+  -o-transition: outline 0.55s ease;
+  transition: outline 0.55s ease;
+}
+#top-bar-container #search-bar input#search::-webkit-input-placeholder,
+#top-bar-container #search-bar input#search:-moz-placeholder,
+#top-bar-container #search-bar input#search::-moz-placeholder,
+#top-bar-container #search-bar input#search:-ms-input-placeholder {
+  color: #65737e;
+}
+#top-bar-container #search-bar .icon {
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 7px;
+  z-index: 1;
+  color: #fffff0;
+}
+#top-bar-container #top-bar-text {
+  float: right;
+  color: #fffff0;
+  margin-top: 15px;
+}
+nav#site-navigation {
+  float: right;
+  position: relative;
+  top: -50px;
+}
+nav#site-navigation ul li {
+  padding: 0 10px;
+  display: inline;
+}
+nav#site-navigation ul li a {
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -475,65 +554,6 @@ a:focus {
 a:hover,
 a:active {
   outline: 0;
-}
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
-.main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
-}
-.main-navigation ul {
-  display: none;
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-.main-navigation li {
-  float: left;
-  position: relative;
-}
-.main-navigation a {
-  display: block;
-  text-decoration: none;
-}
-.main-navigation ul ul {
-  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-  float: left;
-  position: absolute;
-  top: 1.5em;
-  left: -999em;
-  z-index: 99999;
-}
-.main-navigation ul ul ul {
-  left: -999em;
-  top: 0;
-}
-.main-navigation ul ul a {
-  width: 200px;
-}
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-  left: auto;
-}
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-  left: 100%;
-}
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none;
-  }
-  .main-navigation ul {
-    display: block;
-  }
 }
 .site-main .comment-navigation,
 .site-main .posts-navigation,

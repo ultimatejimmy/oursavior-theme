@@ -6,7 +6,6 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package dm.com
  */
 
 ?>
@@ -29,7 +28,7 @@
         </div>
         <div id="site-info">
             <p id="copyright"> &copy;
-                <?php echo date( "Y") ?> Digital Measures&nbsp;&nbsp;&nbsp;<a href="/privacy/">Privacy Policy</a> | <a href="/sitemap.html" class="sitemap-link">Site Map</a></p>
+                <?php echo date( "Y") ?> Our Savior Lutheran Church, Grafton, WI&nbsp;&nbsp;&nbsp;</p>
         </div>
         <!-- .site-info -->
     </footer>

@@ -1,6 +1,6 @@
 /*
 Theme Name: Our Savior Theme
-Theme URI: http://jimmypautz.com
+Theme URI: https://github.com/ultimatejimmy/oursavior-theme
 Author: Jimmy Pautz
 Author URI: http://jimmypautz.com
 Description: Theme for Our Savior Lutheran Church
@@ -43,16 +43,23 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+# Icon Font
+--------------------------------------------------------------*/
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+/*--------------------------------------------------------------
 # Stylus variables
 --------------------------------------------------------------*/
-bodyFont = "Lato", sans-serif
-headerFont = "din-condensed-web", "Fjalla One", sans-serif
+bodyFont = 'Source Sans Pro', sans-serif;
+headerFont = 'Raleway', sans-serif;
 maxWidth = 1200px
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
 html {
-	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -61,6 +68,13 @@ body {
 	margin: 0;
 }
 
+#top-bar
+#main-header
+#content
+	width maxWidth
+	margin-left auto
+	margin-right auto
+	
 article,
 aside,
 details,
@@ -270,31 +284,29 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-html 
-    font-size 62.5%
-body,
-button,
-input,
-select,
+html
+	font-size 62.5%
+
+body
+button
+input
+select
 textarea
-    color #404040
-    font-family 'Lato', sans-serif
-    font-size 1.6rem //16px
-    line-height 1.5
+	color #404040
+	font-family bodyFont
+	font-size 1.6rem
+	line-height 1.5
 
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
-
-p {
-	margin-bottom: 1.5em;
-}
+h1
+h2
+h3
+h4
+h5
+h6
+	font-family headerFont
+    
+p
+	margin-bottom 1.5em
 
 dfn,
 cite,
@@ -531,6 +543,64 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+#top-bar-container
+	width 100%
+	background-image url('img/bg/binding_dark.png')
+	height 60px
+	#search-bar
+		width: 300px;
+		vertical-align: middle;
+		white-space: nowrap;
+		position: relative;
+		top 10px
+		input#search
+			width: 200px;
+			height: 30px;
+			background: #2b303b;
+			border: none;
+			font-size: 1.6rem
+			float: left;
+			color: ivory;
+			padding-left: 45px;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			&::-webkit-input-placeholder
+			&:-moz-placeholder
+			&::-moz-placeholder
+			&:-ms-input-placeholder
+				color: #65737e;
+			-webkit-transition: outline .55s ease;
+			-moz-transition: outline .55s ease;
+			-ms-transition: outline .55s ease;
+			-o-transition: outline .55s ease;
+			transition: outline .55s ease;
+		.icon
+			position: absolute;
+			top: 50%;
+			margin-left: 17px;
+			margin-top: 7px;
+			z-index: 1;
+			color: ivory;
+	#top-bar-text
+		float right
+		color ivory
+		margin-top 15px
+
+nav#site-navigation
+	float right
+	position relative
+	top -50px
+	ul
+		li
+			padding 0 10px
+			display inline
+			a
+				text-decoration none
+				font-family headerFont
+				text-transform uppercase
+				letter-spacing 1px
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -555,98 +625,6 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
-}
-
-/*--------------------------------------------------------------
-## Menus
---------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
-
-.main-navigation ul {
-	display: none;
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
-
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul ul li {
-
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-}
-
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-}
-
-.main-navigation ul ul a:hover,
-.main-navigation ul ul a.focus {
-}
-
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
 }
 
 .site-main .comment-navigation,
