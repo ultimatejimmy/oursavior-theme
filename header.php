@@ -43,13 +43,9 @@
 					</div>
 				</div>
 				<div class="content" id="main-header">
-					<div class="site-branding">
-						<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-							<h1><?php bloginfo('name'); ?></h1>
-						</a>
-					</div>
-					<!--/ .site-branding -->
-
+					<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" id="site-title">
+						<h1><?php bloginfo('name'); ?></h1>
+					</a>
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<a type="button" id="nav-button">
 							<span class="icon-bar"></span>
