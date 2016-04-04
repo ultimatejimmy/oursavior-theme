@@ -13,7 +13,7 @@
     </div>
     <!-- #content -->
 
-    <footer id="colophon" class="site-footer" role="contentinfo">
+    <footer id="main-footer" class="site-footer" role="contentinfo">
         <div class="footer-content">
             <div id="left-footer">
                 <?php dynamic_sidebar( 'left-footer' ); ?>

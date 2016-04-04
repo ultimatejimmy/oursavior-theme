@@ -62,18 +62,24 @@ maxWidth = 1200px
 html {
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
+	width 100%
 }
 
 body {
 	margin: 0;
 }
+#page
+	width 100%
 
 #top-bar
 #main-header
 #content
-	width maxWidth
+footer#main-footer
+	max-width maxWidth
 	margin-left auto
 	margin-right auto
+	@media screen and (max-width: maxWidth)
+		padding 0 20px
 	
 article,
 aside,
@@ -546,7 +552,8 @@ textarea {
 #top-bar-container
 	width 100%
 	background-image url('img/bg/binding_dark.png')
-	height 60px
+	min-height 60px
+	overflow auto
 	#search-bar
 		width: 300px;
 		vertical-align: middle;
@@ -585,13 +592,19 @@ textarea {
 	#top-bar-text
 		float right
 		color ivory
-		margin-top 15px
+		padding 15px 0
 
+#main-header
+	#site-title
+		float left
+		h1
+			margin: 1.5rem 0 -25px;
+		
 nav#site-navigation
 	float right
-	position relative
-	top -50px
+	margin-top 40px
 	ul
+		margin 0
 		li
 			padding 0 10px
 			display inline
@@ -600,6 +613,44 @@ nav#site-navigation
 				font-family headerFont
 				text-transform uppercase
 				letter-spacing 1px
+	a#nav-button
+		display none
+		cursor pointer
+		
+@media (max-width: 830px)
+	nav#site-navigation 
+		a#nav-button
+			display block
+			float right
+			font-size 3rem
+			position absolute
+			top 0
+			right 0
+			padding 10px 10px 0
+			color black
+			font-weight bolder
+			text-shadow none
+			background-color: #0e0e0e;
+			background-image: linear-gradient(to bottom, #151515, #040404);
+			background-repeat: repeat-x;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+			color: #ffffff;
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+			display block
+			padding 10px
+			margin 10px
+			border-radius 2px
+			box-shadow none
+			.icon-bar 
+				background-color: #f5f5f5;
+				border-radius: 1px;
+				box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+				display: block;
+				height: 2px;
+				width: 18px;
+				margin-bottom 3px
+				&:last-child
+					margin-bottom 0
 
 /*--------------------------------------------------------------
 ## Links
