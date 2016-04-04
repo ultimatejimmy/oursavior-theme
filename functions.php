@@ -186,18 +186,3 @@ function my_search_form( $form ) {
 }
 
 add_filter( 'get_search_form', 'my_search_form' );
-function oursavior_theme_customizer( $wp_customize ) {
-    $wp_customize->add_section( 'topbar-text', array(
-        'title' => 'Top Bar Text', // The title of section
-        'description' => 'Use this to list church service times or some other bit of important information.', // The description of section
-    ) );
-	$wp_customize->add_setting( 'oursavior_topbar', array(
-    'default' => 'Worship Times:',
-    // Let everything else default
-	) );
-	$wp_customize->add_control( 'oursavior_topbar', array(
-    'label' => 'Top-bar text',
-    'section' => 'topbar-text',
-	) );
-}
-add_action( 'customize_register', 'oursavior_theme_customizer', 11 );
