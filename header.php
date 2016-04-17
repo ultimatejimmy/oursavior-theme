@@ -20,7 +20,7 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Raleway:800' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Patua+One' rel='stylesheet' type='text/css'>
 		<?php wp_head(); ?>
 	</head>
 
@@ -34,8 +34,11 @@
 				<div id="top-bar-container">
 					<div id="top-bar">
 						<div id="search-bar">
-							<span class="icon entypo-search"></span>
+							<span class="icon fontawesome-search"></span>
 							<?php get_search_form() ?>
+						</div>
+						<div id="location">
+							<a href="/location" class="fontawesome-map-marker button"> Visit</a>
 						</div>
 						<div id="top-bar-text">
 							<?php echo get_theme_mod( 'oursavior_topbar' ); ?>

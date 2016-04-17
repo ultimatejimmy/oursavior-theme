@@ -45,17 +45,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Icon Font
 --------------------------------------------------------------*/
-@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
 /* entypo */
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
+[class*="entypo-"]:before
+[class*="fontawesome-"]:before
+	font-family: 'FontAwesome', sans-serif;
+
 /*--------------------------------------------------------------
 # Stylus variables
 --------------------------------------------------------------*/
 bodyFont = 'Source Sans Pro', sans-serif;
-headerFont = 'Raleway', sans-serif;
+headerFont = 'Patua One', sans-serif;
 maxWidth = 1200px
+os_green = #1c8800
+os_white = ivory
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -73,12 +76,12 @@ body {
 
 #top-bar
 #main-header
-#content
+#content > .content-area
 footer#main-footer
 	max-width maxWidth
 	margin-left auto
 	margin-right auto
-	@media screen and (max-width: maxWidth)
+	@media screen and (max-width: maxWidth + 25)
 		padding 0 20px
 	
 article,
@@ -116,11 +119,14 @@ template {
 
 a {
 	background-color: transparent;
+	text-decoration none
+	color os_green
 }
 
 a:active,
 a:hover {
 	outline: 0;
+	text-decoration underline
 }
 
 abbr[title] {
@@ -205,9 +211,14 @@ textarea {
 	margin: 0;
 }
 
-button {
+button
 	overflow: visible;
-}
+	
+.button
+	color os_white
+	background-color os_green
+	padding 10px
+	border-radius 2px
 
 button,
 select {
@@ -310,6 +321,7 @@ h4
 h5
 h6
 	font-family headerFont
+	font-weight normal
     
 p
 	margin-bottom 1.5em
@@ -556,49 +568,68 @@ textarea {
 	overflow auto
 	#search-bar
 		width: 300px;
+		max-width 100%
 		vertical-align: middle;
 		white-space: nowrap;
 		position: relative;
 		top 10px
+		margin-right 10px
 		input#search
 			width: 200px;
 			height: 30px;
-			background: #2b303b;
+			background-color #454545;
 			border: none;
 			font-size: 1.6rem
 			float: left;
-			color: ivory;
+			color: os_white;
 			padding-left: 45px;
 			-webkit-border-radius: 5px;
 			-moz-border-radius: 5px;
 			border-radius: 5px;
-			&::-webkit-input-placeholder
 			&:-moz-placeholder
 			&::-moz-placeholder
 			&:-ms-input-placeholder
-				color: #65737e;
+			&::-webkit-input-placeholder
+				color: os_white;
 			-webkit-transition: outline .55s ease;
 			-moz-transition: outline .55s ease;
 			-ms-transition: outline .55s ease;
 			-o-transition: outline .55s ease;
 			transition: outline .55s ease;
+			&::-webkit-input-placeholder // chrome is weird...
+				color: os_white;
 		.icon
 			position: absolute;
 			top: 50%;
 			margin-left: 17px;
 			margin-top: 7px;
 			z-index: 1;
-			color: ivory;
+			color: os_white;
 	#top-bar-text
+	#location
 		float right
-		color ivory
+		color os_white
 		padding 15px 0
+	#top-bar-text
+		@media (max-width: 625px)
+			float left
+	#location
+		margin-left 10px
+		a:hover
+			text-decoration none
+			opacity .8
+		@media (max-width: 625px)
+			margin-right 35px
+		@media (max-width: 440px)
+			margin-top 15px
+			float left
+			margin-left 0
 
 #main-header
 	#site-title
 		float left
-		h1
-			margin: 1.5rem 0 -25px;
+		&:hover
+			text-decoration none
 		
 nav#site-navigation
 	float right
@@ -613,12 +644,26 @@ nav#site-navigation
 				font-family headerFont
 				text-transform uppercase
 				letter-spacing 1px
+				&:hover
+					opacity .5
 	a#nav-button
 		display none
 		cursor pointer
-		
-@media (max-width: 830px)
-	nav#site-navigation 
+	@media (max-width: 625px)
+		margin 0 0 20px -50px
+		float left
+		clear both
+		#primary-menu
+			display none
+			li
+				padding 0
+				a
+					color os_white
+					background-color os_green
+					padding 10px
+					display block
+					width 300px
+					max-width 100%
 		a#nav-button
 			display block
 			float right
@@ -652,53 +697,7 @@ nav#site-navigation
 				&:last-child
 					margin-bottom 0
 
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-	color: royalblue;
-}
 
-a:visited {
-	color: purple;
-}
-
-a:hover,
-a:focus,
-a:active {
-	color: midnightblue;
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover,
-a:active {
-	outline: 0;
-}
-
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -803,6 +802,32 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+#content
+	#spotlight
+		max-width maxWidth
+		margin 0 auto
+		#welcome-box
+			background-color: rgba(212, 212, 212, 0.9);
+			border: 1px solid rgba(255, 255, 255, 0.3);
+			border-radius: 2px;
+			margin: 0 auto;
+			max-width: 100%;
+			padding: 10px;
+			position: relative;
+			top: -185px;
+			width: 600px;
+			h2
+				line-height: 2;
+				margin: 0;
+				text-align: center;
+				text-transform: uppercase;
+			@media screen and (max-width: 1000px)
+				top -150px
+			@media screen and (max-width: 760px)
+				top 0
+				background none
+				border none
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -958,3 +983,7 @@ object {
 .gallery-caption {
 	display: block;
 }
+/* ------------------- Simple calendar style -----------------------------------*/
+.simcal-nav-button
+	font-size 2.5rem
+	

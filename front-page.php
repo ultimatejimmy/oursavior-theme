@@ -13,10 +13,12 @@
  */
 
 get_header(); ?>
-	<img src="<?php echo get_theme_mod( 'oursavior_hpimage' );  ?>">
-	<div>
-		<h2><?php echo get_theme_mod( 'oursavior_featuredHeadtext' );  ?></h2>
-		<?php echo get_theme_mod( 'oursavior_featuredTA' );  ?>
+	<div id="spotlight">
+		<img src="<?php echo get_theme_mod( 'oursavior_hpimage' );  ?>">
+		<div id="welcome-box">
+			<h2><?php echo get_theme_mod( 'oursavior_featuredHeadtext' );  ?></h2>
+			<?php echo get_theme_mod( 'oursavior_featuredTA' );  ?>
+		</div>
 	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -32,5 +34,5 @@ get_header(); ?>
 	</div>
 	<!-- #primary -->
 
-	<?php get_sidebar(); ?>
-		<?php get_footer(); ?>
+
+	<?php get_footer(); ?>

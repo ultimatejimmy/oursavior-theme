@@ -44,10 +44,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Icon Font
 --------------------------------------------------------------*/
-@import url("http://weloveiconfonts.com/api/?family=entypo");
+@import url("http://weloveiconfonts.com/api/?family=fontawesome");
 /* entypo */
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
+[class*="entypo-"]:before,
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
 }
 /*--------------------------------------------------------------
 # Stylus variables
@@ -68,16 +69,16 @@ body {
 }
 #top-bar,
 #main-header,
-#content,
+#content > .content-area,
 footer#main-footer {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1225px) {
   #top-bar,
   #main-header,
-  #content,
+  #content > .content-area,
   footer#main-footer {
     padding: 0 20px;
   }
@@ -113,10 +114,13 @@ template {
 }
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: #1c8800;
 }
 a:active,
 a:hover {
   outline: 0;
+  text-decoration: underline;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -186,6 +190,12 @@ textarea {
 }
 button {
   overflow: visible;
+}
+.button {
+  color: #fffff0;
+  background-color: #1c8800;
+  padding: 10px;
+  border-radius: 2px;
 }
 button,
 select {
@@ -272,7 +282,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Patua One', sans-serif;
+  font-weight: normal;
 }
 p {
   margin-bottom: 1.5em;
@@ -491,15 +502,17 @@ textarea {
 }
 #top-bar-container #search-bar {
   width: 300px;
+  max-width: 100%;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
   top: 10px;
+  margin-right: 10px;
 }
 #top-bar-container #search-bar input#search {
   width: 200px;
   height: 30px;
-  background: #2b303b;
+  background-color: #454545;
   border: none;
   font-size: 1.6rem;
   float: left;
@@ -514,11 +527,14 @@ textarea {
   -o-transition: outline 0.55s ease;
   transition: outline 0.55s ease;
 }
-#top-bar-container #search-bar input#search::-webkit-input-placeholder,
 #top-bar-container #search-bar input#search:-moz-placeholder,
 #top-bar-container #search-bar input#search::-moz-placeholder,
-#top-bar-container #search-bar input#search:-ms-input-placeholder {
-  color: #65737e;
+#top-bar-container #search-bar input#search:-ms-input-placeholder,
+#top-bar-container #search-bar input#search::-webkit-input-placeholder {
+  color: #fffff0;
+}
+#top-bar-container #search-bar input#search::-webkit-input-placeholder {
+  color: #fffff0;
 }
 #top-bar-container #search-bar .icon {
   position: absolute;
@@ -528,16 +544,41 @@ textarea {
   z-index: 1;
   color: #fffff0;
 }
-#top-bar-container #top-bar-text {
+#top-bar-container #top-bar-text,
+#top-bar-container #location {
   float: right;
   color: #fffff0;
   padding: 15px 0;
 }
+@media (max-width: 625px) {
+  #top-bar-container #top-bar-text {
+    float: left;
+  }
+}
+#top-bar-container #location {
+  margin-left: 10px;
+}
+#top-bar-container #location a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+@media (max-width: 625px) {
+  #top-bar-container #location {
+    margin-right: 35px;
+  }
+}
+@media (max-width: 440px) {
+  #top-bar-container #location {
+    margin-top: 15px;
+    float: left;
+    margin-left: 0;
+  }
+}
 #main-header #site-title {
   float: left;
 }
-#main-header #site-title h1 {
-  margin: 1.5rem 0 -25px;
+#main-header #site-title:hover {
+  text-decoration: none;
 }
 nav#site-navigation {
   float: right;
@@ -552,15 +593,37 @@ nav#site-navigation ul li {
 }
 nav#site-navigation ul li a {
   text-decoration: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Patua One', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+nav#site-navigation ul li a:hover {
+  opacity: 0.5;
 }
 nav#site-navigation a#nav-button {
   display: none;
   cursor: pointer;
 }
-@media (max-width: 830px) {
+@media (max-width: 625px) {
+  nav#site-navigation {
+    margin: 0 0 20px -50px;
+    float: left;
+    clear: both;
+  }
+  nav#site-navigation #primary-menu {
+    display: none;
+  }
+  nav#site-navigation #primary-menu li {
+    padding: 0;
+  }
+  nav#site-navigation #primary-menu li a {
+    color: #fffff0;
+    background-color: #1c8800;
+    padding: 10px;
+    display: block;
+    width: 300px;
+    max-width: 100%;
+  }
   nav#site-navigation a#nav-button {
     display: block;
     float: right;
@@ -596,46 +659,6 @@ nav#site-navigation a#nav-button {
   nav#site-navigation a#nav-button .icon-bar:last-child {
     margin-bottom: 0;
   }
-}
-/*--------------------------------------------------------------
-## Links
---------------------------------------------------------------*/
-a {
-  color: #4169e1;
-}
-a:visited {
-  color: #800080;
-}
-a:hover,
-a:focus,
-a:active {
-  color: #191970;
-}
-a:focus {
-  outline: thin dotted;
-}
-a:hover,
-a:active {
-  outline: 0;
-}
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden;
-}
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%;
-}
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
 }
 /*--------------------------------------------------------------
 # Accessibility
@@ -730,6 +753,39 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+#content #spotlight {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#content #spotlight #welcome-box {
+  background-color: rgba(212,212,212,0.9);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 2px;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 10px;
+  position: relative;
+  top: -185px;
+  width: 600px;
+}
+#content #spotlight #welcome-box h2 {
+  line-height: 2;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1000px) {
+  #content #spotlight #welcome-box {
+    top: -150px;
+  }
+}
+@media screen and (max-width: 760px) {
+  #content #spotlight #welcome-box {
+    top: 0;
+    background: none;
+    border: none;
+  }
+}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -858,4 +914,8 @@ object {
 }
 .gallery-caption {
   display: block;
+}
+/* ------------------- Simple calendar style -----------------------------------*/
+.simcal-nav-button {
+  font-size: 2.5rem;
 }
