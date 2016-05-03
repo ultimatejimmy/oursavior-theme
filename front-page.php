@@ -20,6 +20,19 @@ get_header(); ?>
 			<?php echo get_theme_mod( 'oursavior_featuredTA' );  ?>
 		</div>
 	</div>
+	<div id="latest-message">
+		<?php $custom_query = new WP_Query('category_name=podcast&posts_per_page=1'); 
+			while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+
+			<div <?php post_class(); ?> id="post-
+				<?php the_ID(); ?>">
+					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<?php the_time('F jS, Y'); ?>
+			</div>
+
+			<?php endwhile; ?>
+				<?php wp_reset_postdata(); // reset the query ?>
+	</div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -31,6 +44,8 @@ get_header(); ?>
 
 		</main>
 		<!-- #main -->
+	</div>
+	<div>
 	</div>
 	<!-- #primary -->
 

@@ -59,6 +59,7 @@ headerFont = 'Patua One', sans-serif;
 maxWidth = 1200px
 os_green = #1c8800
 os_white = ivory
+os_black = black
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -625,6 +626,9 @@ textarea {
 			float left
 			margin-left 0
 
+#masthead.not-front
+	box-shadow 0 -10px 10px 5px black
+	
 #main-header
 	#site-title
 		float left
@@ -637,14 +641,25 @@ nav#site-navigation
 	ul
 		margin 0
 		li
-			padding 0 10px
+			padding 10px
 			display inline
 			a
 				text-decoration none
 				font-family headerFont
 				text-transform uppercase
 				letter-spacing 1px
-				&:hover
+			&:hover
+				color os_white
+				background-color os_black
+			ul.sub-menu
+				display none
+				position absolute
+				margin 10px 0 0 31px
+				li
+					background-color os_black
+			&:hover ul.sub-menu
+				display block
+				li
 					opacity .5
 	a#nav-button
 		display none
@@ -696,7 +711,6 @@ nav#site-navigation
 				margin-bottom 3px
 				&:last-child
 					margin-bottom 0
-
 
 
 /*--------------------------------------------------------------
