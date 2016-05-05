@@ -634,44 +634,76 @@ textarea {
 		float left
 		&:hover
 			text-decoration none
-		
+
 nav#site-navigation
-	float right
-	margin-top 40px
-	ul
-		margin 0
-		li
-			padding 10px
-			display inline
-			a
-				text-decoration none
-				font-family headerFont
-				text-transform uppercase
-				letter-spacing 1px
-			&:hover
-				color os_white
-				background-color os_black
-			ul.sub-menu
-				display none
-				position absolute
-				margin 10px 0 0 31px
-				li
+	@media (min-width: 626px)
+		float right
+		margin-top 40px
+		ul
+			margin 0
+			li
+				display inline
+				a
+					padding 10px
+					text-decoration none
+					font-family headerFont
+					text-transform uppercase
+					letter-spacing 1px
+				&:hover a
 					background-color os_black
-			&:hover ul.sub-menu
-				display block
-				li
-					opacity .5
-	a#nav-button
-		display none
-		cursor pointer
+					color os_white
+				ul.sub-menu
+					display none //change this to none
+					position absolute
+					margin-left -28px
+					width 200px
+					li 
+						display block
+						width 100%
+						&:first-child
+							margin-top 5px
+						a
+							background-color os_black
+							color os_white
+							width 100%
+							display block
+						ul.sub-menu
+							display none
+							margin-left -100%
+							li:first-child
+								margin-top -44px
+				&:hover ul.sub-menu
+					display block
+					transition all .5s ease
+					li 
+						a:hover
+							background-color os_green
+							color os_white
+					&:hover ul.sub-menu
+						display block
+						transition all .5s ease
+						li 
+							a:hover
+								background-color os_green
+								color os_white
+							ul.sub-menu
+								display none
+							&:hover ul.sub-menu
+								display block
+								transition all .5s ease
+		a#nav-button
+			display none
+			cursor pointer
 	@media (max-width: 625px)
 		margin 0 0 20px -50px
 		float left
 		clear both
-		#primary-menu
+		ul#primary-menu
 			display none
+			width 100%
 			li
 				padding 0
+				width 100%
 				a
 					color os_white
 					background-color os_green
@@ -679,6 +711,32 @@ nav#site-navigation
 					display block
 					width 300px
 					max-width 100%
+				ul.sub-menu
+					position static
+					display block
+					margin-left -40px
+					width 100%
+					li
+						display block
+						width 100%
+						ul.sub-menu
+							display block
+							margin-left -40px
+							width 100%
+							li
+								width 100%
+								a
+									display block
+									width 100%
+							ul.sub-menu
+								display block
+								margin-left -40px
+								width 100%
+								li 
+									width 100%
+									a
+										display block
+										width 100%
 		a#nav-button
 			display block
 			float right
@@ -711,7 +769,6 @@ nav#site-navigation
 				margin-bottom 3px
 				&:last-child
 					margin-bottom 0
-
 
 /*--------------------------------------------------------------
 # Accessibility

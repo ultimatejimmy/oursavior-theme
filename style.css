@@ -583,44 +583,81 @@ textarea {
 #main-header #site-title:hover {
   text-decoration: none;
 }
-nav#site-navigation {
-  float: right;
-  margin-top: 40px;
-}
-nav#site-navigation ul {
-  margin: 0;
-}
-nav#site-navigation ul li {
-  padding: 10px;
-  display: inline;
-}
-nav#site-navigation ul li a {
-  text-decoration: none;
-  font-family: 'Patua One', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-nav#site-navigation ul li:hover {
-  color: #fffff0;
-  background-color: #000;
-}
-nav#site-navigation ul li ul.sub-menu {
-  display: none;
-  position: absolute;
-  margin: 10px 0 0 31px;
-}
-nav#site-navigation ul li ul.sub-menu li {
-  background-color: #000;
-}
-nav#site-navigation ul li:hover ul.sub-menu {
-  display: block;
-}
-nav#site-navigation ul li:hover ul.sub-menu li {
-  opacity: 0.5;
-}
-nav#site-navigation a#nav-button {
-  display: none;
-  cursor: pointer;
+@media (min-width: 626px) {
+  nav#site-navigation {
+    float: right;
+    margin-top: 40px;
+  }
+  nav#site-navigation ul {
+    margin: 0;
+  }
+  nav#site-navigation ul li {
+    display: inline;
+  }
+  nav#site-navigation ul li a {
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Patua One', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  nav#site-navigation ul li:hover a {
+    background-color: #000;
+    color: #fffff0;
+  }
+  nav#site-navigation ul li ul.sub-menu {
+    display: none;
+    position: absolute;
+    margin-left: -28px;
+    width: 200px;
+  }
+  nav#site-navigation ul li ul.sub-menu li {
+    display: block;
+    width: 100%;
+  }
+  nav#site-navigation ul li ul.sub-menu li:first-child {
+    margin-top: 5px;
+  }
+  nav#site-navigation ul li ul.sub-menu li a {
+    background-color: #000;
+    color: #fffff0;
+    width: 100%;
+    display: block;
+  }
+  nav#site-navigation ul li ul.sub-menu li ul.sub-menu {
+    display: none;
+    margin-left: -100%;
+  }
+  nav#site-navigation ul li ul.sub-menu li ul.sub-menu li:first-child {
+    margin-top: -44px;
+  }
+  nav#site-navigation ul li:hover ul.sub-menu {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  nav#site-navigation ul li:hover ul.sub-menu li a:hover {
+    background-color: #1c8800;
+    color: #fffff0;
+  }
+  nav#site-navigation ul li:hover ul.sub-menu:hover ul.sub-menu {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  nav#site-navigation ul li:hover ul.sub-menu:hover ul.sub-menu li a:hover {
+    background-color: #1c8800;
+    color: #fffff0;
+  }
+  nav#site-navigation ul li:hover ul.sub-menu:hover ul.sub-menu li ul.sub-menu {
+    display: none;
+  }
+  nav#site-navigation ul li:hover ul.sub-menu:hover ul.sub-menu li:hover ul.sub-menu {
+    display: block;
+    transition: all 0.5s ease;
+  }
+  nav#site-navigation a#nav-button {
+    display: none;
+    cursor: pointer;
+  }
 }
 @media (max-width: 625px) {
   nav#site-navigation {
@@ -628,19 +665,55 @@ nav#site-navigation a#nav-button {
     float: left;
     clear: both;
   }
-  nav#site-navigation #primary-menu {
+  nav#site-navigation ul#primary-menu {
     display: none;
+    width: 100%;
   }
-  nav#site-navigation #primary-menu li {
+  nav#site-navigation ul#primary-menu li {
     padding: 0;
+    width: 100%;
   }
-  nav#site-navigation #primary-menu li a {
+  nav#site-navigation ul#primary-menu li a {
     color: #fffff0;
     background-color: #1c8800;
     padding: 10px;
     display: block;
     width: 300px;
     max-width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu {
+    position: static;
+    display: block;
+    margin-left: -40px;
+    width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li {
+    display: block;
+    width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu {
+    display: block;
+    margin-left: -40px;
+    width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu li {
+    width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu li a {
+    display: block;
+    width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu ul.sub-menu {
+    display: block;
+    margin-left: -40px;
+    width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu ul.sub-menu li {
+    width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu ul.sub-menu li a {
+    display: block;
+    width: 100%;
   }
   nav#site-navigation a#nav-button {
     display: block;
