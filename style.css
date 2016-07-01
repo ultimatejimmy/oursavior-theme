@@ -132,10 +132,6 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 mark {
   background: #ff0;
   color: #000;
@@ -284,6 +280,8 @@ h5,
 h6 {
   font-family: 'Patua One', sans-serif;
   font-weight: normal;
+  line-height: normal;
+  margin: 0;
 }
 p {
   margin-bottom: 1.5em;
@@ -583,6 +581,9 @@ textarea {
 #main-header #site-title:hover {
   text-decoration: none;
 }
+#main-header #site-title h1 {
+  margin: 0.67em 0;
+}
 @media (min-width: 626px) {
   nav#site-navigation {
     float: right;
@@ -659,7 +660,7 @@ textarea {
     cursor: pointer;
   }
 }
-@media (max-width: 625px) {
+@media (max-width: 655px) {
   nav#site-navigation {
     margin: 0 0 20px -50px;
     float: left;
@@ -750,6 +751,37 @@ textarea {
   nav#site-navigation a#nav-button .icon-bar:last-child {
     margin-bottom: 0;
   }
+}
+/*----------------------------------------------------------------
+	Sidebar
+-----------------------------------------------------------------*/
+#right-sidebar {
+  width: 300px;
+  float: right;
+}
+@media (max-width: 655px) {
+  #right-sidebar {
+    display: none;
+  }
+}
+/*----------------------------------------------------------------
+	 Front page
+-----------------------------------------------------------------*/
+#front-page {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#front-page #latest-message {
+  width: 300px;
+  float: left;
+}
+#front-page #latest-message h4 {
+  font-size: 25px;
+}
+#front-page #primary {
+  width: 300px;
+  float: left;
 }
 /*--------------------------------------------------------------
 # Accessibility
@@ -844,6 +876,9 @@ textarea {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+main {
+  margin-top: 20px;
+}
 #content #spotlight {
   max-width: 1200px;
   margin: 0 auto;
@@ -875,6 +910,26 @@ textarea {
     top: 0;
     background: none;
     border: none;
+  }
+}
+#post-content,
+.post-content,
+#comments,
+#disqus_thread,
+.author-info {
+  margin-bottom: 20px;
+  overflow: auto;
+}
+#post-content {
+  max-width: 66.6%;
+  border-bottom: 1px solid #d3d3d3;
+}
+#post-content:last-child {
+  border-bottom: none;
+}
+@media (max-width: 655px) {
+  #post-content {
+    max-width: 95%;
   }
 }
 /*--------------------------------------------------------------

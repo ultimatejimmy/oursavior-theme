@@ -143,11 +143,6 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
-}
-
 mark {
 	background: #ff0;
 	color: #000;
@@ -323,6 +318,8 @@ h5
 h6
 	font-family headerFont
 	font-weight normal
+	line-height normal
+	margin 0
     
 p
 	margin-bottom 1.5em
@@ -634,6 +631,8 @@ textarea {
 		float left
 		&:hover
 			text-decoration none
+		h1
+			margin .67em 0
 
 nav#site-navigation
 	@media (min-width: 626px)
@@ -694,7 +693,7 @@ nav#site-navigation
 		a#nav-button
 			display none
 			cursor pointer
-	@media (max-width: 625px)
+	@media (max-width: 655px)
 		margin 0 0 20px -50px
 		float left
 		clear both
@@ -770,6 +769,32 @@ nav#site-navigation
 				&:last-child
 					margin-bottom 0
 
+/*----------------------------------------------------------------
+	Sidebar
+-----------------------------------------------------------------*/
+#right-sidebar
+	width 300px
+	float right
+	@media (max-width: 655px)
+		display none
+
+/*----------------------------------------------------------------
+	 Front page
+-----------------------------------------------------------------*/
+#front-page
+	max-width maxWidth
+	margin-left auto
+	margin-right auto
+	#latest-message
+		width 300px
+		float left
+		h4
+			font-size 25px
+	#primary
+		width 300px
+		float left
+
+					
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -873,6 +898,9 @@ nav#site-navigation
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+main
+	margin-top 20px
+
 #content
 	#spotlight
 		max-width maxWidth
@@ -898,6 +926,22 @@ nav#site-navigation
 				top 0
 				background none
 				border none
+				
+#post-content
+.post-content
+#comments
+#disqus_thread
+.author-info
+	margin-bottom 20px
+	overflow auto
+	
+#post-content
+	max-width 66.6%
+	border-bottom 1px solid lightgray
+	&:last-child
+		border-bottom none
+	@media (max-width: 655px)
+		max-width 95%
 
 /*--------------------------------------------------------------
 ## Posts and pages

@@ -108,6 +108,15 @@ function dm_com_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
     register_sidebar(array(
+		'name' => 'Left Column Front Page',
+		'id'   => 'left-column-front',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s left-column-front" class="%2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>'
+	));
+	register_sidebar(array(
 		'name' => 'Left Footer',
 		'id'   => 'left-footer',
 		'description'   => '',
@@ -126,7 +135,7 @@ function dm_com_widgets_init() {
 		'after_title'   => '</h4>'
 	));
     register_sidebar(array(
-		'name' => 'right Footer',
+		'name' => 'Right Footer',
 		'id'   => 'right-footer',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
@@ -163,7 +172,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
