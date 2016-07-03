@@ -58,6 +58,7 @@ bodyFont = 'Source Sans Pro', sans-serif;
 headerFont = 'Patua One', sans-serif;
 maxWidth = 1200px
 os_green = #1c8800
+os_light_green = #55b555
 os_white = ivory
 os_black = black
 /*--------------------------------------------------------------
@@ -76,9 +77,9 @@ body {
 	width 100%
 
 #top-bar
-#main-header
+#main-header > #site-title
 #content > .content-area
-footer#main-footer
+footer#main-footer > div
 	max-width maxWidth
 	margin-left auto
 	margin-right auto
@@ -412,23 +413,12 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-	margin: 0 0 1.5em 3em;
-}
-
 ul {
 	list-style: disc;
 }
 
 ol {
 	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
 }
 
 dt {
@@ -616,12 +606,6 @@ textarea {
 		a:hover
 			text-decoration none
 			opacity .8
-		@media (max-width: 625px)
-			margin-right 35px
-		@media (max-width: 440px)
-			margin-top 15px
-			float left
-			margin-left 0
 
 #masthead.not-front
 	box-shadow 0 -10px 10px 5px black
@@ -694,56 +678,60 @@ nav#site-navigation
 			display none
 			cursor pointer
 	@media (max-width: 655px)
-		margin 0 0 20px -50px
-		float left
-		clear both
+		.menu-primary-menu-container
+			background-color os_green
+			clear both
+		ul, ul ul, ul ul ul
+			margin 0
+			width 100%
 		ul#primary-menu
 			display none
 			width 100%
+			list-style none
 			li
 				padding 0
 				width 100%
+				a:hover
+					background-color os_black
 				a
 					color os_white
-					background-color os_green
 					padding 10px
 					display block
 					width 300px
 					max-width 100%
 				ul.sub-menu
 					position static
-					display block
-					margin-left -40px
 					width 100%
 					li
 						display block
 						width 100%
+						a:hover
+							background-color os_black
 						ul.sub-menu
 							display block
-							margin-left -40px
 							width 100%
 							li
 								width 100%
 								a
 									display block
 									width 100%
+									&:hover
+										background-color os_black
 							ul.sub-menu
 								display block
-								margin-left -40px
 								width 100%
 								li 
 									width 100%
+									a:hover
+										background-color os_black
 									a
 										display block
 										width 100%
 		a#nav-button
-			display block
+			cursor pointer
 			float right
 			font-size 3rem
-			position absolute
-			top 0
-			right 0
-			padding 10px 10px 0
+			padding 10px
 			color black
 			font-weight bolder
 			text-shadow none
@@ -753,9 +741,7 @@ nav#site-navigation
 			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 			color: #ffffff;
 			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-			display block
-			padding 10px
-			margin 10px
+			margin-bottom 10px
 			border-radius 2px
 			box-shadow none
 			.icon-bar 
@@ -775,6 +761,9 @@ nav#site-navigation
 #right-sidebar
 	width 300px
 	float right
+	margin-left 20px
+	@media (max-width: maxWidth)
+		margin-right 10px
 	@media (max-width: 655px)
 		display none
 
@@ -788,11 +777,17 @@ nav#site-navigation
 	#latest-message
 		width 300px
 		float left
+		margin-right 20px
+		border-bottom 1px solid lightgray
+		margin-bottom 20px
 		h4
 			font-size 25px
-	#primary
-		width 300px
-		float left
+		@media (max-width: maxWidth)
+			margin-left 10px
+	#primary main article
+		overflow auto
+		margin auto 10px
+		min-width 300px
 
 					
 /*--------------------------------------------------------------
@@ -898,7 +893,7 @@ nav#site-navigation
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-main
+#primary, #latest-message, #front-sidebar
 	margin-top 20px
 
 #content
@@ -964,16 +959,36 @@ main
 	display: inline;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
+//.page-content,
+//.entry-content,
+//.entry-summary {
+//	margin-top: 10px;
+//}
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+/*--------------------------------------------------------------
+Footer
+---------------------------------------------------------------*/
+#main-footer
+	width 100%
+	background-image url('img/bg/binding_dark.png')
+	min-height 60px
+	overflow auto
+	color os_white
+	.footer-content
+		padding-top 20px
+		#left-footer, #middle-footer, #right-footer
+			width 375px
+			float left
+			margin-right 20px
+	#site-info
+		clear both
+	a
+		color os_light_green
 
 /*--------------------------------------------------------------
 ## Asides
@@ -1101,4 +1116,14 @@ object {
 /* ------------------- Simple calendar style -----------------------------------*/
 .simcal-nav-button
 	font-size 2.5rem
+	
+.simcal-default-calendar-grid .simcal-events
+	font-size 1.4rem
+	
+.simcal-default-calendar-list .simcal-event-details
+	font-size inherit !important
+	line-height 1 !important
+	
+.simcal-default-calendar-list ul.simcal-events
+	margin 0 !important
 	

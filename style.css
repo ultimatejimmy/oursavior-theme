@@ -68,18 +68,18 @@ body {
   width: 100%;
 }
 #top-bar,
-#main-header,
+#main-header > #site-title,
 #content > .content-area,
-footer#main-footer {
+footer#main-footer > div {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 1225px) {
   #top-bar,
-  #main-header,
+  #main-header > #site-title,
   #content > .content-area,
-  footer#main-footer {
+  footer#main-footer > div {
     padding: 0 20px;
   }
 }
@@ -361,20 +361,11 @@ hr {
   height: 1px;
   margin-bottom: 1.5em;
 }
-ul,
-ol {
-  margin: 0 0 1.5em 3em;
-}
 ul {
   list-style: disc;
 }
 ol {
   list-style: decimal;
-}
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em;
 }
 dt {
   font-weight: bold;
@@ -560,18 +551,6 @@ textarea {
   text-decoration: none;
   opacity: 0.8;
 }
-@media (max-width: 625px) {
-  #top-bar-container #location {
-    margin-right: 35px;
-  }
-}
-@media (max-width: 440px) {
-  #top-bar-container #location {
-    margin-top: 15px;
-    float: left;
-    margin-left: 0;
-  }
-}
 #masthead.not-front {
   box-shadow: 0 -10px 10px 5px #000;
 }
@@ -661,22 +640,30 @@ textarea {
   }
 }
 @media (max-width: 655px) {
-  nav#site-navigation {
-    margin: 0 0 20px -50px;
-    float: left;
+  nav#site-navigation .menu-primary-menu-container {
+    background-color: #1c8800;
     clear: both;
+  }
+  nav#site-navigation ul,
+  nav#site-navigation ul ul,
+  nav#site-navigation ul ul ul {
+    margin: 0;
+    width: 100%;
   }
   nav#site-navigation ul#primary-menu {
     display: none;
     width: 100%;
+    list-style: none;
   }
   nav#site-navigation ul#primary-menu li {
     padding: 0;
     width: 100%;
   }
+  nav#site-navigation ul#primary-menu li a:hover {
+    background-color: #000;
+  }
   nav#site-navigation ul#primary-menu li a {
     color: #fffff0;
-    background-color: #1c8800;
     padding: 10px;
     display: block;
     width: 300px;
@@ -684,17 +671,17 @@ textarea {
   }
   nav#site-navigation ul#primary-menu li ul.sub-menu {
     position: static;
-    display: block;
-    margin-left: -40px;
     width: 100%;
   }
   nav#site-navigation ul#primary-menu li ul.sub-menu li {
     display: block;
     width: 100%;
   }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li a:hover {
+    background-color: #000;
+  }
   nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu {
     display: block;
-    margin-left: -40px;
     width: 100%;
   }
   nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu li {
@@ -704,26 +691,28 @@ textarea {
     display: block;
     width: 100%;
   }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu li a:hover {
+    background-color: #000;
+  }
   nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu ul.sub-menu {
     display: block;
-    margin-left: -40px;
     width: 100%;
   }
   nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu ul.sub-menu li {
     width: 100%;
+  }
+  nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu ul.sub-menu li a:hover {
+    background-color: #000;
   }
   nav#site-navigation ul#primary-menu li ul.sub-menu li ul.sub-menu ul.sub-menu li a {
     display: block;
     width: 100%;
   }
   nav#site-navigation a#nav-button {
-    display: block;
+    cursor: pointer;
     float: right;
     font-size: 3rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px 10px 0;
+    padding: 10px;
     color: #000;
     font-weight: bolder;
     text-shadow: none;
@@ -733,9 +722,7 @@ textarea {
     border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
     color: #fff;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-    display: block;
-    padding: 10px;
-    margin: 10px;
+    margin-bottom: 10px;
     border-radius: 2px;
     box-shadow: none;
   }
@@ -758,6 +745,12 @@ textarea {
 #right-sidebar {
   width: 300px;
   float: right;
+  margin-left: 20px;
+}
+@media (max-width: 1200px) {
+  #right-sidebar {
+    margin-right: 10px;
+  }
 }
 @media (max-width: 655px) {
   #right-sidebar {
@@ -775,13 +768,22 @@ textarea {
 #front-page #latest-message {
   width: 300px;
   float: left;
+  margin-right: 20px;
+  border-bottom: 1px solid #d3d3d3;
+  margin-bottom: 20px;
 }
 #front-page #latest-message h4 {
   font-size: 25px;
 }
-#front-page #primary {
-  width: 300px;
-  float: left;
+@media (max-width: 1200px) {
+  #front-page #latest-message {
+    margin-left: 10px;
+  }
+}
+#front-page #primary main article {
+  overflow: auto;
+  margin: auto 10px;
+  min-width: 300px;
 }
 /*--------------------------------------------------------------
 # Accessibility
@@ -876,7 +878,9 @@ textarea {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-main {
+#primary,
+#latest-message,
+#front-sidebar {
   margin-top: 20px;
 }
 #content #spotlight {
@@ -949,14 +953,35 @@ main {
 .group-blog .byline {
   display: inline;
 }
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+/*--------------------------------------------------------------
+Footer
+---------------------------------------------------------------*/
+#main-footer {
+  width: 100%;
+  background-image: url("img/bg/binding_dark.png");
+  min-height: 60px;
+  overflow: auto;
+  color: #fffff0;
+}
+#main-footer .footer-content {
+  padding-top: 20px;
+}
+#main-footer .footer-content #left-footer,
+#main-footer .footer-content #middle-footer,
+#main-footer .footer-content #right-footer {
+  width: 375px;
+  float: left;
+  margin-right: 20px;
+}
+#main-footer #site-info {
+  clear: both;
+}
+#main-footer a {
+  color: #55b555;
 }
 /*--------------------------------------------------------------
 ## Asides
@@ -1064,4 +1089,14 @@ object {
 /* ------------------- Simple calendar style -----------------------------------*/
 .simcal-nav-button {
   font-size: 2.5rem;
+}
+.simcal-default-calendar-grid .simcal-events {
+  font-size: 1.4rem;
+}
+.simcal-default-calendar-list .simcal-event-details {
+  font-size: inherit !important;
+  line-height: 1 !important;
+}
+.simcal-default-calendar-list ul.simcal-events {
+  margin: 0 !important;
 }

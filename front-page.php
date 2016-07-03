@@ -21,6 +21,9 @@ get_header(); ?>
 		<div id="latest-message">
 			<?php dynamic_sidebar( 'left-column-front' ); ?>
 		</div>
+		<div id="front-sidebar">
+			<?php get_sidebar(); ?>
+		</div>
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
@@ -33,9 +36,7 @@ get_header(); ?>
 			</main>
 			<!-- #main -->
 		</div>
-		<div id="front-sidebar">
-			<?php get_sidebar(); ?>
-		</div>
+
 	</div>
 	<!-- #primary -->
 
