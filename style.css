@@ -68,7 +68,7 @@ body {
   width: 100%;
 }
 #top-bar,
-#main-header > #site-title,
+#main-header,
 #content > .content-area,
 footer#main-footer > div {
   max-width: 1200px;
@@ -77,7 +77,7 @@ footer#main-footer > div {
 }
 @media screen and (max-width: 1225px) {
   #top-bar,
-  #main-header > #site-title,
+  #main-header,
   #content > .content-area,
   footer#main-footer > div {
     padding: 0 20px;
