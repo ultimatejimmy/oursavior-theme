@@ -1088,10 +1088,10 @@ object {
 }
 /* ------------------- Simple calendar style -----------------------------------*/
 .simcal-nav-button {
-  font-size: 2.5rem;
+  font-size: 2.5rem !important;
 }
 .simcal-default-calendar-grid .simcal-events {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
 }
 .simcal-default-calendar-list .simcal-event-details {
   font-size: inherit !important;
