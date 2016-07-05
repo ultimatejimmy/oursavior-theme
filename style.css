@@ -1090,6 +1090,9 @@ object {
 .simcal-nav-button {
   font-size: 2.5rem !important;
 }
+.simcal-nav.simcal-current > h3 {
+  font-size: 3rem;
+}
 .simcal-default-calendar-grid .simcal-events {
   font-size: 1.4rem !important;
 }
