@@ -10,35 +10,37 @@
 get_header(); ?>
 
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<div class="the-content left">
+				<?php while ( have_posts() ) : the_post(); ?>
 
-            <?php while ( have_posts() ) : the_post(); ?>
+					<?php the_post_thumbnail(); ?>
 
-                <?php the_post_thumbnail(); ?>
-                    <?php get_sidebar(); ?>
-                        <div id="post-content">
+						<div id="post-content">
 
-                            <?php get_template_part( 'template-parts/content', 'single' ); ?>
+							<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-                                <?php the_post_navigation(); ?>
-
-
+								<?php the_post_navigation(); ?>
 
 
-                        </div>
-                        <?php endwhile; // End of the loop. ?>
-                            <?php
+
+
+						</div>
+						<?php endwhile; // End of the loop. ?>
+							<?php
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
 					comments_template();
 				endif;
 			?>
+			</div>
+			<?php get_sidebar(); ?>
 
-        </main>
-        <!-- #main -->
-    </div>
-    <!-- #primary -->
+		</main>
+		<!-- #main -->
+	</div>
+	<!-- #primary -->
 
 
-    <?php get_footer(); ?>
+	<?php get_footer(); ?>

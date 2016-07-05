@@ -197,21 +197,9 @@ button,
 select {
   text-transform: none;
 }
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
 button[disabled],
 html input[disabled] {
   cursor: default;
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
 }
 input {
   line-height: normal;
@@ -384,22 +372,6 @@ table {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
-  border-radius: 3px;
-  background: #e6e6e6;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), inset 0 15px 17px rgba(255,255,255,0.5), inset 0 -5px 12px rgba(0,0,0,0.05);
-  color: rgba(0,0,0,0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
-  line-height: 1;
-  padding: 0.6em 1em 0.4em;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-}
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -640,7 +612,7 @@ textarea {
   }
 }
 @media (max-width: 655px) {
-  nav#site-navigation .menu-primary-menu-container {
+  nav#site-navigation > div {
     background-color: #1c8800;
     clear: both;
   }
@@ -742,20 +714,22 @@ textarea {
 /*----------------------------------------------------------------
 	Sidebar
 -----------------------------------------------------------------*/
-#right-sidebar {
-  width: 300px;
-  float: right;
+.sidebar {
+  width: 27.5%;
   margin-left: 20px;
 }
 @media (max-width: 1200px) {
-  #right-sidebar {
+  .sidebar {
     margin-right: 10px;
   }
 }
 @media (max-width: 655px) {
-  #right-sidebar {
+  .sidebar {
     display: none;
   }
+}
+.right {
+  float: right;
 }
 /*----------------------------------------------------------------
 	 Front page
@@ -924,17 +898,23 @@ textarea {
   margin-bottom: 20px;
   overflow: auto;
 }
+.the-content {
+  width: 65%;
+}
+@media (max-width: 655px) {
+  .the-content {
+    width: 95%;
+  }
+}
+.left {
+  float: left;
+}
 #post-content {
   max-width: 66.6%;
   border-bottom: 1px solid #d3d3d3;
 }
 #post-content:last-child {
   border-bottom: none;
-}
-@media (max-width: 655px) {
-  #post-content {
-    max-width: 95%;
-  }
 }
 /*--------------------------------------------------------------
 ## Posts and pages
