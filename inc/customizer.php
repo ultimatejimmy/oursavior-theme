@@ -12,14 +12,13 @@
 function dm_com_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 }
 add_action( 'customize_register', 'dm_com_customize_register' );
 function oursavior_theme_customizer( $wp_customize ) {
     $wp_customize->add_section( 
-		'topbar-text', array(
-        	'title' => 'Top Bar Text', // The title of section
-        	'description' => 'Use this to list church service times or some other bit of important information.', // The description of section
+		'custom_text', array(
+        	'title' => 'Custom Text', // The title of section
+        	'description' => 'The title for the brochure page and the text for the top bar', // The description of section
     	)
 	);
 	$wp_customize->add_section( 
@@ -28,6 +27,12 @@ function oursavior_theme_customizer( $wp_customize ) {
         	'priority'  => 201
     	)
 	);
+	$wp_customize->add_setting( 
+		'frontpage_title', array(
+    		'default' => get_bloginfo(),
+    		// Let everything else default
+		) 
+    );
 	$wp_customize->add_setting( 
 		'oursavior_topbar', array(
     		'default' => 'Worship Times:',
@@ -41,9 +46,15 @@ function oursavior_theme_customizer( $wp_customize ) {
 		)
     );
 	$wp_customize->add_control( 
+		'frontpage_title', array(
+    		'label' => 'Front (brochure) page title',
+    		'section' => 'custom_text',
+		)
+	);
+	$wp_customize->add_control( 
 		'oursavior_topbar', array(
-    		'label' => 'Top-bar text',
-    		'section' => 'topbar-text',
+    		'label' => 'Top bar text',
+    		'section' => 'custom_text',
 		)
 	);
 	$wp_customize->add_control( 

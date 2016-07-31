@@ -732,29 +732,29 @@ textarea {
   float: right;
 }
 /*----------------------------------------------------------------
-	 Front page
+	 home page
 -----------------------------------------------------------------*/
-#front-page {
+#home-page {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-#front-page #latest-message {
+#home-page #latest-message {
   width: 300px;
   float: left;
   margin-right: 20px;
   border-bottom: 1px solid #d3d3d3;
   margin-bottom: 20px;
 }
-#front-page #latest-message h4 {
+#home-page #latest-message h4 {
   font-size: 25px;
 }
 @media (max-width: 1200px) {
-  #front-page #latest-message {
+  #home-page #latest-message {
     margin-left: 10px;
   }
 }
-#front-page #primary main article {
+#home-page #primary main article {
   overflow: auto;
   margin: auto 10px;
   min-width: 300px;
@@ -811,6 +811,7 @@ textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
+f
 }
 /*--------------------------------------------------------------
 # Clearings
@@ -862,7 +863,7 @@ textarea {
 }
 .widget-title,
 #latest-message h4,
-#front-page .entry-title {
+#home-page .entry-title {
   background-color: #000;
   color: #fff;
   font-size: 2.5rem !important;
