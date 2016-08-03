@@ -591,68 +591,63 @@ textarea {
 		h1
 			margin .67em 0
 
+submenuWidth = 200px
+
 nav#site-navigation
 	@media (min-width: 626px)
 		float right
 		margin-top 40px
-		ul
-			margin 0
-			li
-				display inline
-				a
-					padding 10px
-					text-decoration none
-					font-family headerFont
-					text-transform uppercase
-					letter-spacing 1px
-				&:hover a
-					background-color os_black
+		ul //Removing padding, margin and "list-style" from the "ul", and adding "position:relative"
+			padding:0;
+			margin:0;
+			list-style: none;
+			position: relative;
+			li // Positioning the navigation items inline
+				margin: 0px -7px 0 0;
+				display:inline-block;
+			a // Styling the links 
+				display:block;
+				padding 10px
+				font-size:20px;
+				text-decoration:none;
+				font-family headerFont
+				text-transform uppercase
+				letter-spacing 1px
+				&:hover
+					background-color: os_black;
 					color os_white
-				ul.sub-menu
-					display block //change this to none
-					position absolute
-					margin-left -40px
-					width 200px
-					li 
-						display block
-						width 100%
-						&:first-child
-							margin-top 5px
-						a
-							background-color os_black
-							color os_white
-							width 100%
-							display block
-						ul.sub-menu
-							display none
-							margin-left -100%
-							li:first-child
-								margin-top -44px
-				&:hover ul.sub-menu
-					display block
-					transition all .5s ease
-					li 
-						a:hover
-							background-color os_green
-							color os_white
-					&:hover ul.sub-menu
-						display block
-						transition all .5s ease
-						li 
-							a:hover
-								background-color os_green
-								color os_white
-							ul.sub-menu
-								display none
-							&:hover ul.sub-menu
-								display block
-								transition all .5s ease
+			ul //Hide Dropdowns by Default and giving it a position of absolute
+				display: none;
+				position: absolute;
+				top: 100%;
+				li ///* First Tier Dropdown */
+					width submenuWidth
+					display:list-item;
+					position: relative;
+					> a:after
+						content:  ' +'
+					> a:only-child:after
+						content: ''
+					a
+						background-color os_black
+						color os_white
+						&:hover
+							color os_green
+				ul
+					position: absolute;
+					top:0;
+					left:-100%;
+			li:hover > ul //Display Dropdowns on Hover
+				display:inherit;
+				transition all .5s ease
+
+
 		a#nav-button
 			display none
 			cursor pointer
 	@media (max-width: 655px)
 		> div
-			background-color os_green
+			background-color os_black
 			clear both
 		ul, ul ul, ul ul ul
 			margin 0
@@ -665,58 +660,36 @@ nav#site-navigation
 				padding 0
 				width 100%
 				a:hover
-					background-color os_black
+					background-color os_green
 				a
 					color os_white
 					padding 10px
 					display block
 					width 300px
 					max-width 100%
-				ul.sub-menu
+				ul
 					position static
 					width 100%
 					li
 						display block
 						width 100%
 						a:hover
-							background-color os_black
-						ul.sub-menu
-							display block
-							width 100%
-							li
-								width 100%
-								a
-									display block
-									width 100%
-									&:hover
-										background-color os_black
-							ul.sub-menu
-								display block
-								width 100%
-								li 
-									width 100%
-									a:hover
-										background-color os_black
-									a
-										display block
-										width 100%
+							background-color os_green
 		a#nav-button
 			cursor pointer
 			float right
-			font-size 3rem
 			padding 10px
 			color black
-			font-weight bolder
-			text-shadow none
 			background-color: #0e0e0e;
 			background-image: linear-gradient(to bottom, #151515, #040404);
 			background-repeat: repeat-x;
 			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 			color: #ffffff;
 			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-			margin-bottom 10px
 			border-radius 2px
 			box-shadow none
+			position relative
+			top -40px
 			.icon-bar 
 				background-color: #f5f5f5;
 				border-radius: 1px;
