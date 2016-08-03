@@ -567,6 +567,7 @@ textarea {
     display: none;
     position: absolute;
     top: 100%;
+    animation: fadeIn 0.5s ease;
   }
   nav#site-navigation ul ul li {
     width: 200px;
@@ -593,7 +594,6 @@ textarea {
   }
   nav#site-navigation ul li:hover > ul {
     display: inherit;
-    transition: all 0.5s ease;
   }
   nav#site-navigation a#nav-button {
     display: none;
@@ -1058,4 +1058,48 @@ object {
 }
 .simcal-default-calendar-list ul.simcal-events {
   margin: 0 !important;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

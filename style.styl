@@ -591,6 +591,20 @@ textarea {
 		h1
 			margin .67em 0
 
+			
+@keyframes fadeIn {
+  0% {
+//    display: none;
+    opacity: 0;
+  }
+  1% {
+//    display: block;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 submenuWidth = 200px
 
 nav#site-navigation
@@ -620,6 +634,7 @@ nav#site-navigation
 				display: none;
 				position: absolute;
 				top: 100%;
+				animation fadeIn .5s ease
 				li ///* First Tier Dropdown */
 					width submenuWidth
 					display:list-item;
@@ -639,9 +654,6 @@ nav#site-navigation
 					left:-100%;
 			li:hover > ul //Display Dropdowns on Hover
 				display:inherit;
-				transition all .5s ease
-
-
 		a#nav-button
 			display none
 			cursor pointer
