@@ -558,9 +558,9 @@ textarea {
     color: #fffff0;
   }
   nav#site-navigation ul li ul.sub-menu {
-    display: none;
+    display: block;
     position: absolute;
-    margin-left: -28px;
+    margin-left: -40px;
     width: 200px;
   }
   nav#site-navigation ul li ul.sub-menu li {
