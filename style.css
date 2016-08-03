@@ -538,7 +538,7 @@ textarea {
 @media (min-width: 626px) {
   nav#site-navigation {
     float: right;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   nav#site-navigation ul {
     padding: 0;
