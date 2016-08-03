@@ -55,9 +55,9 @@
 								<div class="content" id="main-header">
 									<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" id="site-title">
 										<?php if(is_front_page() ) { ?>
-										<h1><?php echo get_theme_mod( 'frontpage_title' ); ?><br><span><?php bloginfo('description'); ?></span></h1>
+										<h1><?php echo get_theme_mod( 'frontpage_title' ); ?></h1>
 										<?php } else { ?>
-										<h1><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></h1>
+										<h1><?php bloginfo('name'); ?></h1>
 										<?php } ?>
 									</a>
 									<nav id="site-navigation" class="main-navigation" role="navigation">
