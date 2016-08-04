@@ -33,3 +33,6 @@ footer#main-footer > div {
 #main-header #site-title h1 {
   font-size: 5rem;
 }
+#main-header #site-title h1 span {
+  font-size: 3.5rem;
+}
