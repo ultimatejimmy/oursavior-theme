@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * Template Name: Custom Full Width
+ * Template Name: No Sidebar
  * Description: Page template without sidebar
  *
  * @package dm.com
