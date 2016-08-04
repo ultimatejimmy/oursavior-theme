@@ -553,7 +553,7 @@ textarea {
   nav#site-navigation ul a {
     display: block;
     padding: 10px;
-    font-size: 20px;
+    font-size: 1.6rem;
     text-decoration: none;
     font-family: 'Patua One', sans-serif;
     text-transform: uppercase;
