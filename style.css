@@ -1072,6 +1072,9 @@ object {
 .simcal-default-calendar-list ul.simcal-events {
   margin: 0 !important;
 }
+.genericon {
+  font-size: 5rem !important;
+}
 @-moz-keyframes fadeIn {
   0% {
     opacity: 0;
