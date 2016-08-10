@@ -586,6 +586,7 @@ textarea {
   nav#site-navigation ul ul li a {
     background-color: #000;
     color: #fffff0;
+    font-size: 1.4rem;
   }
   nav#site-navigation ul ul li a:hover {
     color: #0e4431;
