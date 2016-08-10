@@ -41,18 +41,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Icon Font
---------------------------------------------------------------*/
 @import url("http://weloveiconfonts.com/api/?family=fontawesome");
-/* entypo */
 [class*="entypo-"]:before,
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
-/*--------------------------------------------------------------
-# Stylus variables
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -189,7 +182,7 @@ button {
 }
 .button {
   color: #fffff0;
-  background-color: #1c8800;
+  background-color: #0e4431;
   padding: 10px;
   border-radius: 2px;
 }
@@ -479,8 +472,7 @@ textarea {
   float: left;
   color: #fffff0;
   padding-left: 45px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  margin-bottom: 20px;
   border-radius: 5px;
   -webkit-transition: outline 0.55s ease;
   -moz-transition: outline 0.55s ease;
@@ -497,6 +489,9 @@ textarea {
 #top-bar-container #search-bar input#search::-webkit-input-placeholder {
   color: #fffff0;
 }
+#top-bar-container #search-bar input#search:active {
+  box-shadow: 0 0 5px #fff;
+}
 #top-bar-container #search-bar .icon {
   position: absolute;
   top: 50%;
@@ -509,10 +504,12 @@ textarea {
 #top-bar-container #location {
   float: right;
   color: #fffff0;
-  padding: 15px 0;
+  padding: 5px 0;
+  margin: 10px 0;
 }
 @media (max-width: 625px) {
-  #top-bar-container #top-bar-text {
+  #top-bar-container #top-bar-text,
+  #top-bar-container #location {
     float: left;
   }
 }
@@ -535,10 +532,16 @@ textarea {
 #main-header #site-title h1 {
   margin: 0.67em 0;
 }
-@media (min-width: 626px) {
+#main-header a {
+  color: #0e4431;
+}
+@media (min-width: 750px) {
   nav#site-navigation {
     float: right;
     margin-top: 20px;
+  }
+  nav#site-navigation ul#primary-menu {
+    display: block;
   }
   nav#site-navigation ul {
     padding: 0;
@@ -553,7 +556,7 @@ textarea {
   nav#site-navigation ul a {
     display: block;
     padding: 10px;
-    font-size: 20px;
+    font-size: 1.6rem;
     text-decoration: none;
     font-family: 'Patua One', sans-serif;
     text-transform: uppercase;
@@ -570,7 +573,7 @@ textarea {
     animation: fadeIn 0.5s ease;
   }
   nav#site-navigation ul ul li {
-    width: 200px;
+    width: 150px;
     display: list-item;
     position: relative;
   }
@@ -585,7 +588,7 @@ textarea {
     color: #fffff0;
   }
   nav#site-navigation ul ul li a:hover {
-    color: #1c8800;
+    color: #0e4431;
   }
   nav#site-navigation ul ul ul {
     position: absolute;
@@ -600,7 +603,7 @@ textarea {
     cursor: pointer;
   }
 }
-@media (max-width: 655px) {
+@media (max-width: 750px) {
   nav#site-navigation > div {
     background-color: #000;
     clear: both;
@@ -621,7 +624,7 @@ textarea {
     width: 100%;
   }
   nav#site-navigation ul#primary-menu li a:hover {
-    background-color: #1c8800;
+    background-color: #0e4431;
   }
   nav#site-navigation ul#primary-menu li a {
     color: #fffff0;
@@ -639,7 +642,7 @@ textarea {
     width: 100%;
   }
   nav#site-navigation ul#primary-menu li ul li a:hover {
-    background-color: #1c8800;
+    background-color: #0e4431;
   }
   nav#site-navigation a#nav-button {
     cursor: pointer;
@@ -655,7 +658,7 @@ textarea {
     border-radius: 2px;
     box-shadow: none;
     position: relative;
-    top: -40px;
+    top: 25px;
   }
   nav#site-navigation a#nav-button .icon-bar {
     background-color: #f5f5f5;
@@ -925,13 +928,22 @@ Footer
 #main-footer .footer-content {
   padding-top: 20px;
 }
-#main-footer .footer-content #left-footer,
-#main-footer .footer-content #middle-footer,
-#main-footer .footer-content #right-footer {
-  width: 375px;
+#main-footer .footer-content > div {
+  width: 360px;
   float: left;
-  margin-right: 20px;
+  margin-right: 40px;
   margin-bottom: 20px;
+}
+@media (max-width: 1200px) {
+  #main-footer .footer-content > div {
+    max-width: 90%;
+    margin: auto 20px 30px;
+  }
+}
+@media (max-width: 853px) {
+  #main-footer .footer-content > div {
+    width: 90%;
+  }
 }
 #main-footer #site-info {
   clear: both;

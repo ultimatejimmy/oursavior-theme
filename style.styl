@@ -42,25 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Icon Font
---------------------------------------------------------------*/
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-/* entypo */
-[class*="entypo-"]:before
-[class*="fontawesome-"]:before
-	font-family: 'FontAwesome', sans-serif;
-
-/*--------------------------------------------------------------
-# Stylus variables
---------------------------------------------------------------*/
-bodyFont = 'Source Sans Pro', sans-serif;
-headerFont = 'Patua One', sans-serif;
-maxWidth = 1200px
-os_green = #1c8800
-os_light_green = #55b555
-os_white = ivory
-os_black = black
+@import('vars.styl')
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -122,7 +104,7 @@ template {
 a {
 	background-color: transparent;
 	text-decoration none
-	color os_green
+	color os_green_bright
 }
 
 a:active,
@@ -544,8 +526,7 @@ textarea {
 			float: left;
 			color: os_white;
 			padding-left: 45px;
-			-webkit-border-radius: 5px;
-			-moz-border-radius: 5px;
+			margin-bottom 20px
 			border-radius: 5px;
 			&:-moz-placeholder
 			&::-moz-placeholder
@@ -559,6 +540,8 @@ textarea {
 			transition: outline .55s ease;
 			&::-webkit-input-placeholder // chrome is weird...
 				color: os_white;
+			&:active
+				box-shadow 0 0 5px white
 		.icon
 			position: absolute;
 			top: 50%;
@@ -570,8 +553,8 @@ textarea {
 	#location
 		float right
 		color os_white
-		padding 15px 0
-	#top-bar-text
+		padding 5px 0
+		margin 10px 0
 		@media (max-width: 625px)
 			float left
 	#location
@@ -590,6 +573,8 @@ textarea {
 			text-decoration none
 		h1
 			margin .67em 0
+	a
+		color os_green
 
 			
 @keyframes fadeIn {
@@ -603,10 +588,13 @@ textarea {
     opacity: 1;
   }
 }
-submenuWidth = 200px
+submenuWidth = 150px
+navMin = 750px
 
 nav#site-navigation
-	@media (min-width: 626px)
+	@media (min-width: navMin)
+		ul#primary-menu
+			display block
 		float right
 		margin-top 20px
 		ul //Removing padding, margin and "list-style" from the "ul", and adding "position:relative"
@@ -620,7 +608,7 @@ nav#site-navigation
 			a // Styling the links 
 				display:block;
 				padding 10px
-				font-size:20px;
+				font-size: 1.6rem
 				text-decoration:none;
 				font-family headerFont
 				text-transform uppercase
@@ -655,7 +643,7 @@ nav#site-navigation
 		a#nav-button
 			display none
 			cursor pointer
-	@media (max-width: 655px)
+	@media (max-width: navMin)
 		> div
 			background-color os_black
 			clear both
@@ -699,7 +687,7 @@ nav#site-navigation
 			border-radius 2px
 			box-shadow none
 			position relative
-			top -40px
+			top 25px
 			.icon-bar 
 				background-color: #f5f5f5;
 				border-radius: 1px;
@@ -958,15 +946,21 @@ Footer
 	color os_white
 	.footer-content
 		padding-top 20px
-		#left-footer, #middle-footer, #right-footer
-			width 375px
+		> div
+			width 360px
 			float left
-			margin-right 20px
+			margin-right 40px
 			margin-bottom 20px
+			@media (max-width: maxWidth)
+				max-width 90%
+				margin auto 20px 30px
+			@media (max-width: 853px)
+				width 90%
 	#site-info
 		clear both
 	a
 		color os_light_green
+
 
 /*--------------------------------------------------------------
 ## Asides

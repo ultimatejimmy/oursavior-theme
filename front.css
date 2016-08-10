@@ -1,3 +1,8 @@
+@import url("http://weloveiconfonts.com/api/?family=fontawesome");
+[class*="entypo-"]:before,
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
 /*----------------------------------------------------------------
 	 front page
 -----------------------------------------------------------------*/
@@ -19,20 +24,66 @@ body {
     background-image: url("img/church/cover-tall600.jpg");
   }
 }
-#top-bar,
-#main-header,
-#content > .content-area,
-footer#main-footer > div {
-  margin-left: 30px;
-  margin-right: 30px;
-  max-width: none;
+@media (min-width: 800px) {
+  #top-bar,
+  #main-header,
+  #content > .content-area {
+    margin: auto 50px;
+    max-width: none;
+  }
 }
-#content {
-  min-height: 700px;
+#primary {
+  min-height: 500px;
+}
+#primary .entry-title {
+  display: none;
+}
+#primary .entry-content {
+  margin: auto;
+  padding-top: 50px;
+  text-align: center;
+  width: 80%;
+}
+#primary .entry-content p mark {
+  background-color: #e0e5df;
+  font-size: 2.5rem;
 }
 #main-header #site-title h1 {
-  font-size: 5rem;
+  font-size: 3.2rem;
 }
 #main-header #site-title h1 span {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+}
+@media (max-width: 675px) {
+  nav#site-navigation a#nav-button {
+    top: -60px;
+  }
+}
+.brochure-wrapper {
+  background-color: #fffff0;
+  overflow: auto;
+}
+.brochure-wrapper .brochure-content {
+  width: 1200px;
+  max-width: 100%;
+  margin: auto;
+  padding-top: 20px;
+}
+.brochure-wrapper .brochure-content > div {
+  width: 360px;
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+@media (max-width: 1200px) {
+  .brochure-wrapper .brochure-content > div {
+    max-width: 90%;
+    margin: auto 20px 30px;
+  }
+}
+@media (max-width: 853px) {
+  .brochure-wrapper .brochure-content > div {
+    width: 90%;
+  }
 }

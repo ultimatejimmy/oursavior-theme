@@ -1,0 +1,12 @@
+/*--------------------------------------------------------------
+# Icon Font
+--------------------------------------------------------------*/
+@import url("http://weloveiconfonts.com/api/?family=fontawesome");
+/* entypo */
+[class*="entypo-"]:before,
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+/*--------------------------------------------------------------
+# Stylus variables
+--------------------------------------------------------------*/

@@ -26,6 +26,19 @@ get_header(); ?>
 
 	
 	<!-- #primary -->
+		<div class="brochure-wrapper">
+			<div class="brochure-content">
+				<div>
+					<?php dynamic_sidebar( 'brochure-left' ); ?>
+				</div>
+				<div>
+					<?php dynamic_sidebar( 'brochure-middle' ); ?>
+				</div>
+				<div>
+					<?php dynamic_sidebar( 'brochure-right' ); ?>
+				</div>
+        	</div>
+        </div>
 
 
 	<?php get_footer(); ?>

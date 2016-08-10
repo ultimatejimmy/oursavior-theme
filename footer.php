@@ -15,13 +15,13 @@
 
     <footer id="main-footer" class="site-footer" role="contentinfo">
         <div class="footer-content">
-            <div id="left-footer">
+            <div>
                 <?php dynamic_sidebar( 'left-footer' ); ?>
             </div>
-            <div id="middle-footer">
+            <div>
                 <?php dynamic_sidebar( 'middle-footer' ); ?>
             </div>
-            <div id="right-footer">
+            <div>
                 <?php dynamic_sidebar( 'right-footer' ); ?>
             </div>
 

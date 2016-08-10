@@ -108,7 +108,7 @@ function dm_com_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
     register_sidebar(array(
-		'name' => 'Left Column Front Page',
+		'name' => 'Left Column Home Page',
 		'id'   => 'left-column-front',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s left-column-front" class="%2$s">',
@@ -142,6 +142,33 @@ function dm_com_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4>',
 		'after_title'   => '</h4>'
+	));
+	register_sidebar(array(
+		'name' => 'Brochure Left',
+		'id'   => 'left-brochure',
+		'description'   => 'Brochure page left content box',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	));
+    register_sidebar(array(
+		'name' => 'Brochure Middle',
+		'id'   => 'middle-brochure',
+		'description'   => 'Brochure page middle content box',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
+	));
+    register_sidebar(array(
+		'name' => 'Brochure Right',
+		'id'   => 'right-brochure',
+		'description'   => 'Brochure page right content box',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>'
 	));
 }
 add_action( 'widgets_init', 'dm_com_widgets_init' );
