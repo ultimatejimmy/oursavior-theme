@@ -182,7 +182,7 @@ button {
 }
 .button {
   color: #fffff0;
-  background-color: #0e4431;
+  background-color: #1c8800;
   padding: 10px;
   border-radius: 2px;
 }
@@ -589,7 +589,7 @@ textarea {
     font-size: 1.4rem;
   }
   nav#site-navigation ul ul li a:hover {
-    color: #0e4431;
+    color: #55b555;
   }
   nav#site-navigation ul ul ul {
     position: absolute;
