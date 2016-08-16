@@ -186,6 +186,9 @@ button {
   padding: 10px;
   border-radius: 2px;
 }
+.button:hover {
+  opacity: 0.8;
+}
 button,
 select {
   text-transform: none;
