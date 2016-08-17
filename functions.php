@@ -222,3 +222,8 @@ function my_search_form( $form ) {
 }
 
 add_filter( 'get_search_form', 'my_search_form' );
+
+function jeherve_contact_info_google_key() {
+        return 'AIzaSyBdyQ4yTEjLWyamnClU28m0YrQi7V3zzhs'; // Your API Key.
+}
+add_filter( 'jetpack_google_maps_api_key', 'jeherve_contact_info_google_key' );
