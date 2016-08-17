@@ -76,6 +76,10 @@ body {
   margin-bottom: 20px;
   text-align: justify;
 }
+.brochure-wrapper .brochure-content > div:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
 .brochure-wrapper .brochure-content > div h3 {
   text-align: center;
   font-size: 3rem;
