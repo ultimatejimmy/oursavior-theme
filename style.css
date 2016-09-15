@@ -278,7 +278,10 @@ i {
   font-style: italic;
 }
 blockquote {
-  margin: 0 1.5em;
+  background: #eee none repeat scroll 0 0;
+  color: #666;
+  padding: 1.1em;
+  margin: 10px;
 }
 address {
   margin: 0 0 1.5em;
@@ -862,13 +865,11 @@ f
   margin-bottom: 20px;
   overflow: auto;
 }
-.the-content,
-#post-content {
+.the-content {
   width: 65%;
 }
 @media (max-width: 655px) {
-  .the-content,
-  #post-content {
+  .the-content {
     width: 95%;
   }
 }
