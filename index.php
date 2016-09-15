@@ -13,7 +13,10 @@
  */
 
 get_header(); ?>
+<div id="spotlight">
+			<img src="<?php echo get_theme_mod( 'oursavior_hpimage' );  ?>">
 
+		</div>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 

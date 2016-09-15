@@ -54,7 +54,7 @@ body {
 #main-header #site-title h1 span {
   font-size: 2.5rem;
 }
-@media (max-width: 675px) {
+@media (max-width: 615px) {
   nav#site-navigation a#nav-button {
     top: -60px;
   }
