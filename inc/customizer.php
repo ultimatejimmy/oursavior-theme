@@ -40,6 +40,12 @@ function oursavior_theme_customizer( $wp_customize ) {
 		) 
     );
 	$wp_customize->add_setting( 
+		'oursavior_visitLink', array(
+    		'default' => get_site_url() . '/visit',
+    		// Let everything else default
+		) 
+    );
+	$wp_customize->add_setting( 
 		'oursavior_hpimage', array(
 			'default'      => '../img/church.jpg',
 			'transport'    => 'postMessage'
@@ -54,6 +60,12 @@ function oursavior_theme_customizer( $wp_customize ) {
 	$wp_customize->add_control( 
 		'oursavior_topbar', array(
     		'label' => 'Top bar text',
+    		'section' => 'custom_text',
+		)
+	);
+	$wp_customize->add_control( 
+		'oursavior_visitLink', array(
+    		'label' => 'Visit URL',
     		'section' => 'custom_text',
 		)
 	);
