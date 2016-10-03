@@ -19,6 +19,7 @@
                     </div>
                     <!-- .entry-meta -->
                     <?php endif; ?>
+			<?php the_post_thumbnail(); ?>
         </header>
         <!-- .entry-header -->
 
