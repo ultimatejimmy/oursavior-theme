@@ -1,4 +1,4 @@
-@import url("http://weloveiconfonts.com/api/?family=fontawesome");
+@import url("fonts/font-awesome.css");
 [class*="entypo-"]:before,
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
@@ -7,7 +7,7 @@
 	 front page
 -----------------------------------------------------------------*/
 body {
-  background-image: url("img/church/cover-wide.jpg");
+  background-image: url("../img/church/cover-wide.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,13 +15,13 @@ body {
 }
 @media (max-width: 1020px) {
   body {
-    background-image: url("img/church/cover-tall.jpg");
+    background-image: url("../img/church/cover-tall.jpg");
     background-size: auto;
   }
 }
 @media (max-width: 600px) {
   body {
-    background-image: url("img/church/cover-tall600.jpg");
+    background-image: url("../img/church/cover-tall600.jpg");
   }
 }
 @media (min-width: 800px) {
