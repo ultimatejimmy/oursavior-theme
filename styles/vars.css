@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------
 # Icon Font
 --------------------------------------------------------------*/
-@import url("http://weloveiconfonts.com/api/?family=fontawesome");
+@import url("fonts/font-awesome.css");
 /* entypo */
 [class*="entypo-"]:before,
 [class*="fontawesome-"]:before {

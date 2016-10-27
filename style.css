@@ -41,7 +41,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import url("http://weloveiconfonts.com/api/?family=fontawesome");
+@import url("fonts/font-awesome.css");
 [class*="entypo-"]:before,
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
@@ -693,7 +693,7 @@ textarea {
   margin-right: auto;
 }
 #home-page #latest-message {
-  min-width: 300px;
+  width: 300px;
   float: left;
   margin-right: 20px;
   border-bottom: 1px solid #d3d3d3;
@@ -708,7 +708,7 @@ textarea {
     margin-left: 10px;
   }
 }
-@media (max-width: 940px) {
+@media (max-width: 600px) {
   #home-page #latest-message {
     width: 95%;
   }

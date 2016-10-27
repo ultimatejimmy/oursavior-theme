@@ -22,9 +22,9 @@
 		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Patua+One' rel='stylesheet' type='text/css'>
 		<?php wp_head(); ?>
-		<?php if(is_page_template( 'page-templates/brochure.php' )) { ?>
-		<link href='<?php echo get_template_directory_uri(); ?>/front.css' rel='stylesheet' type='text/css'>
-		<?php } ?>
+			<?php if(is_page_template( 'page-templates/brochure.php' )) { ?>
+				<link href='<?php echo get_template_directory_uri(); ?>/styles/front.css' rel='stylesheet' type='text/css'>
+				<?php } ?>
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -41,7 +41,7 @@
 								<div id="top-bar-container">
 									<div id="top-bar">
 										<div id="search-bar">
-											<span class="icon fontawesome-search"></span>
+											<span class="icon fa-search"></span>
 											<?php get_search_form() ?>
 										</div>
 										<div id="location">
@@ -55,10 +55,10 @@
 								<div class="content" id="main-header">
 									<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" id="site-title">
 										<?php if(is_page_template( 'page-templates/brochure.php' )) { ?>
-										<h1><?php echo get_theme_mod( 'frontpage_title' ); ?></h1>
-										<?php } else { ?>
-										<h1><?php bloginfo('name'); ?></h1>
-										<?php } ?>
+											<h1><?php echo get_theme_mod( 'frontpage_title' ); ?></h1>
+											<?php } else { ?>
+												<h1><?php bloginfo('name'); ?></h1>
+												<?php } ?>
 									</a>
 									<nav id="site-navigation" class="main-navigation" role="navigation">
 										<a type="button" id="nav-button">
