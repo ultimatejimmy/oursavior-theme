@@ -520,6 +520,7 @@ textarea {
 }
 #main-header #site-title h1 {
   margin: 0.67em 0;
+  font-size: 3.2rem;
 }
 #main-header a {
   color: #0e4431;
