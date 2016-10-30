@@ -45,7 +45,7 @@
 											<?php get_search_form() ?>
 										</div>
 										<div id="location">
-											<a href="location" class="fontawesome-map-marker button"> Visit</a>
+											<a href="<?php echo get_theme_mod( 'oursavior_visitLink' ); ?>" class="fontawesome-map-marker button"> Visit</a>
 										</div>
 										<div id="top-bar-text">
 											<?php echo get_theme_mod( 'oursavior_topbar' ); ?>
