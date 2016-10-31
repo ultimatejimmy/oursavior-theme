@@ -18,9 +18,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,700italic|Patua+One' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat|Josefin+Sans" rel="stylesheet">   		
 		<?php wp_head(); ?>
 			<?php if(is_page_template( 'page-templates/brochure.php' )) { ?>
 				<link href='<?php echo get_template_directory_uri(); ?>/styles/front.css' rel='stylesheet' type='text/css'>
