@@ -549,7 +549,6 @@ textarea {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 1px;
   }
   nav#site-navigation ul a:hover {
     background-color: #000;
