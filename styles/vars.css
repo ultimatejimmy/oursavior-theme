@@ -1,10 +1,11 @@
 /*--------------------------------------------------------------
 # Icon Font
 --------------------------------------------------------------*/
-@import url("fonts/font-awesome.css");
+@import url("../fonts/font-awesome.css");
 /* entypo */
 [class*="entypo-"]:before,
-[class*="fontawesome-"]:before {
+[class*="fontawesome-"]:before,
+[class*="fa-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
 /*--------------------------------------------------------------
