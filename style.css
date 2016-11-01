@@ -41,7 +41,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import 'styles/vars.css';
+@import url("../fonts/font-awesome.css");
+[class*="entypo-"]:before,
+[class*="fontawesome-"]:before,
+[class*="fa-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -60,11 +65,11 @@ body {
 #main-header,
 #content > .content-area,
 footer#main-footer > div {
-  max-width: maxWidth;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (max-width: maxWidth25) {
+@media screen and (max-width: 1225px) {
   #top-bar,
   #main-header,
   #content > .content-area,
@@ -104,7 +109,7 @@ template {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: os_green_bright;
+  color: #1c8800;
 }
 a:active,
 a:hover {
@@ -177,8 +182,8 @@ button {
   overflow: visible;
 }
 .button {
-  color: os_white;
-  background-color: os_green_bright;
+  color: #fffff0;
+  background-color: #1c8800;
   padding: 10px;
   border-radius: 2px;
 }
@@ -249,7 +254,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: bodyFont;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.8rem;
   line-height: 1.5;
 }
@@ -259,7 +264,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: headerFont;
+  font-family: 'Josefin Sans', 'Patua One', sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0;
@@ -455,7 +460,7 @@ textarea {
   border: none;
   font-size: 1.6rem;
   float: left;
-  color: os_white;
+  color: #fffff0;
   padding-left: 45px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -469,10 +474,10 @@ textarea {
 #top-bar-container #search-bar input#search::-moz-placeholder,
 #top-bar-container #search-bar input#search:-ms-input-placeholder,
 #top-bar-container #search-bar input#search::-webkit-input-placeholder {
-  color: os_white;
+  color: #fffff0;
 }
 #top-bar-container #search-bar input#search::-webkit-input-placeholder {
-  color: os_white;
+  color: #fffff0;
 }
 #top-bar-container #search-bar input#search:active {
   box-shadow: 0 0 5px #fff;
@@ -483,12 +488,12 @@ textarea {
   margin-left: 17px;
   margin-top: 7px;
   z-index: 1;
-  color: os_white;
+  color: #fffff0;
 }
 #top-bar-container #top-bar-text,
 #top-bar-container #location {
   float: right;
-  color: os_white;
+  color: #fffff0;
   padding: 5px 0;
   margin: 10px 0;
 }
@@ -518,7 +523,7 @@ textarea {
   margin: 0.67em 0;
 }
 #main-header a {
-  color: os_green;
+  color: #0e4431;
 }
 @media (min-width: 750px) {
   nav#site-navigation {
@@ -543,12 +548,12 @@ textarea {
     padding: 10px;
     font-size: 1.8rem;
     text-decoration: none;
-    font-family: bodyFont;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
   }
   nav#site-navigation ul a:hover {
-    background-color: os_black;
-    color: os_white;
+    background-color: #000;
+    color: #fffff0;
   }
   nav#site-navigation ul ul {
     display: none;
@@ -569,11 +574,11 @@ textarea {
     content: '';
   }
   nav#site-navigation ul ul li a {
-    background-color: os_black;
-    color: os_white;
+    background-color: #000;
+    color: #fffff0;
   }
   nav#site-navigation ul ul li a:hover {
-    color: os_light_green;
+    color: #55b555;
   }
   nav#site-navigation ul ul ul {
     position: absolute;
@@ -590,7 +595,7 @@ textarea {
 }
 @media (max-width: 750px) {
   nav#site-navigation > div {
-    background-color: os_black;
+    background-color: #000;
     clear: both;
   }
   nav#site-navigation ul,
@@ -609,10 +614,10 @@ textarea {
     width: 100%;
   }
   nav#site-navigation ul#primary-menu li a:hover {
-    background-color: os_green;
+    background-color: #0e4431;
   }
   nav#site-navigation ul#primary-menu li a {
-    color: os_white;
+    color: #fffff0;
     padding: 10px;
     display: block;
     width: 300px;
@@ -627,7 +632,7 @@ textarea {
     width: 100%;
   }
   nav#site-navigation ul#primary-menu li ul li a:hover {
-    background-color: os_green;
+    background-color: #0e4431;
   }
   nav#site-navigation a#nav-button {
     cursor: pointer;
@@ -665,7 +670,7 @@ textarea {
   width: 27.5%;
   margin-left: 20px;
 }
-@media (max-width: maxWidth) {
+@media (max-width: 1200px) {
   .sidebar {
     margin-right: 10px;
   }
@@ -682,7 +687,7 @@ textarea {
 	 home page
 -----------------------------------------------------------------*/
 #home-page {
-  max-width: maxWidth;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -697,7 +702,7 @@ textarea {
 #home-page #latest-message h4 {
   font-size: 25px;
 }
-@media (max-width: maxWidth) {
+@media (max-width: 1200px) {
   #home-page #latest-message {
     margin-left: 10px;
   }
@@ -829,7 +834,7 @@ f
   margin-bottom: 20px;
 }
 #content #spotlight {
-  max-width: maxWidth;
+  max-width: 1200px;
   margin: 0 auto;
 }
 #content #spotlight #welcome-box {
@@ -915,7 +920,7 @@ Footer
   background-image: url("img/bg/binding_dark.png");
   min-height: 60px;
   overflow: auto;
-  color: os_white;
+  color: #fffff0;
 }
 #main-footer .footer-content {
   padding-top: 20px;
@@ -926,7 +931,7 @@ Footer
   margin-right: 40px;
   margin-bottom: 20px;
 }
-@media (max-width: maxWidth) {
+@media (max-width: 1200px) {
   #main-footer .footer-content > div {
     max-width: 90%;
     margin: auto 20px 30px;
@@ -941,7 +946,7 @@ Footer
   clear: both;
 }
 #main-footer a {
-  color: os_light_green;
+  color: #55b555;
 }
 /*--------------------------------------------------------------
 ## Asides
