@@ -1,0 +1,72 @@
+@import('vars.styl')
+
+/*----------------------------------------------------------------
+	 front page
+-----------------------------------------------------------------*/
+		
+body
+	background-image: url("../img/church/cover-wide.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment fixed
+	@media (max-width: 1020px)
+		background-image: url("../img/church/cover-tall.jpg");
+		background-size	auto
+	@media (max-width: 600px)
+		background-image: url("../img/church/cover-tall600.jpg");
+
+#top-bar
+#main-header
+#content > .content-area
+	@media (min-width: 800px)
+		margin auto 50px
+		max-width none
+	
+#primary
+	min-height 500px
+	.entry-title
+		display none
+	.entry-content
+		margin: auto;
+		padding-top: 50px;
+		text-align: center;
+		width: 80%;
+		p mark
+			background-color #E0E5DF
+			font-size 2.5rem
+	
+#main-header #site-title h1
+	font-size 3.2rem
+	span
+		font-size 2.5rem
+		
+nav#site-navigation a#nav-button
+	@media (max-width: 615px)
+		top -60px
+		
+.brochure-wrapper
+	background-color os_white
+	overflow auto
+	.brochure-content
+		width maxWidth
+		max-width 100%
+		margin auto
+		padding-top 20px
+		> div
+			width 360px
+			float left
+			margin-right 40px
+			margin-bottom 20px
+			text-align justify
+			img:hover
+				opacity .7
+				cursor pointer
+			h3
+				text-align center
+				font-size 3rem
+			@media (max-width: maxWidth)
+				max-width 90%
+				margin auto 20px 30px
+			@media (max-width: 853px)
+				width 90%

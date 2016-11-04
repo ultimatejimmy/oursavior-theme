@@ -1,0 +1,1129 @@
+/*
+Theme Name: Our Savior Theme
+Theme URI: https://github.com/ultimatejimmy/oursavior-theme
+Author: Jimmy Pautz
+Author URI: http://jimmypautz.com
+Description: Theme for Our Savior Lutheran Church
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: jsst
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+
+Our Savior theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+@import('styles/vars.styl')
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+	width 100%
+}
+
+body
+	margin: 0;
+
+#page
+	width 100%
+
+#top-bar
+#main-header
+#content > .content-area
+footer#main-footer > div
+	max-width maxWidth
+	margin-left auto
+	margin-right auto
+	@media screen and (max-width: maxWidth + 25)
+		padding 0 20px
+	
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+	text-decoration none
+	color os_green_bright
+}
+
+a:active,
+a:hover {
+	outline: 0;
+	text-decoration underline
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button
+	overflow: visible;
+	
+.button
+	color os_white
+	background-color os_green_bright
+	padding 10px
+	border-radius 2px
+	&:hover
+		opacity .8
+		text-decoration none
+
+button,
+select {
+	text-transform: none;
+}
+
+
+
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+html
+	font-size 62.5%
+
+body
+button
+input
+select
+textarea
+	color #404040
+	font-family bodyFont
+	font-size 1.8rem
+	line-height 1.5
+
+h1
+h2
+h3
+h4
+h5
+h6
+	font-family headerFont
+	font-weight normal
+	line-height normal
+	margin 0
+	
+h3
+	font-size 3rem
+
+h4
+	font-size 2rem
+    
+p
+	margin-bottom 1.5em
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote
+	background: #eee none repeat scroll 0 0;
+	color: #666;
+	padding: 1.1em
+	margin 10px
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+//button:hover,
+//input[type="button"]:hover,
+//input[type="reset"]:hover,
+//input[type="submit"]:hover {
+//	border-color: #ccc #bbb #aaa;
+//	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+//}
+//
+//button:focus,
+//input[type="button"]:focus,
+//input[type="reset"]:focus,
+//input[type="submit"]:focus,
+//button:active,
+//input[type="button"]:active,
+//input[type="reset"]:active,
+//input[type="submit"]:active {
+//	border-color: #aaa #bbb #bbb;
+//	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+//}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+	padding: 3px;
+}
+
+textarea {
+	padding-left: 3px;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+#top-bar-container
+	width 100%
+	background-image url('img/bg/binding_dark.png')
+	min-height 60px
+	overflow hidden
+	#search-bar
+		width: 300px;
+		max-width 100%
+		vertical-align: middle;
+		white-space: nowrap;
+		position: relative;
+		top 10px
+		margin-right 10px
+		input#search
+			width: 200px;
+			height: 30px;
+			background-color #454545;
+			border: none;
+			font-size: 1.6rem
+			float: left;
+			color: os_white;
+			padding-left: 45px;
+			margin-bottom 20px
+			border-radius: 5px;
+			&:-moz-placeholder
+			&::-moz-placeholder
+			&:-ms-input-placeholder
+			&::-webkit-input-placeholder
+				color: os_white;
+			-webkit-transition: outline .55s ease;
+			-moz-transition: outline .55s ease;
+			-ms-transition: outline .55s ease;
+			-o-transition: outline .55s ease;
+			transition: outline .55s ease;
+			&::-webkit-input-placeholder // chrome is weird...
+				color: os_white;
+			&:active
+				box-shadow 0 0 5px white
+		.icon
+			position: absolute;
+			top: 50%;
+			margin-left: 17px;
+			margin-top: 7px;
+			z-index: 1
+			color: os_white;
+	#top-bar-text
+	#location
+		float right
+		color os_white
+		padding 5px 0
+		margin 10px 0
+		@media (max-width: 625px)
+			float left
+	#location
+		margin-left 10px
+		a:hover
+			text-decoration none
+			opacity .8
+
+#masthead.not-front
+	box-shadow 0 -10px 10px 5px black
+	
+#main-header
+	#site-title
+		float left
+		&:hover
+			text-decoration none
+		h1
+			margin .67em 0
+	a
+		color os_green
+	
+			
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+submenuWidth = 150px
+navMin = 750px
+
+nav#site-navigation
+	@media (min-width: navMin)
+		ul#primary-menu
+			display block
+		float right
+		margin-top 20px
+		ul //Removing padding, margin and "list-style" from the "ul", and adding "position:relative"
+			padding:0;
+			margin:0;
+			list-style: none;
+			position: relative;
+			li // Positioning the navigation items inline
+				margin: 0px -7px 0 0;
+				display:inline-block;
+			a // Styling the links 
+				display:block;
+				padding 10px
+				font-size 1.8rem
+				text-decoration:none;
+				font-family bodyFont
+				text-transform uppercase
+				&:hover
+					background-color: os_black;
+					color os_white
+			ul //Hide Dropdowns by Default and giving it a position of absolute
+				display: none;
+				position: absolute;
+				top: 100%;
+				animation fadeIn .5s ease
+				z-index 100
+				li ///* First Tier Dropdown */
+					width submenuWidth
+					display:list-item;
+					position: relative;
+					> a:after
+						content:  ' +'
+					> a:only-child:after
+						content: ''
+					a
+						background-color os_black
+						color os_white
+						&:hover
+							color os_light_green
+				ul
+					position: absolute;
+					top:0;
+					left:-100%;
+			li:hover > ul //Display Dropdowns on Hover
+				display:inherit;
+		a#nav-button
+			display none
+			cursor pointer
+	@media (max-width: navMin)
+		> div
+			background-color os_black
+			clear both
+		ul, ul ul, ul ul ul
+			margin 0
+			width 100%
+		ul#primary-menu
+			display none
+			width 100%
+			list-style none
+			li
+				padding 0
+				width 100%
+				a:hover
+					background-color os_green
+				a
+					color os_white
+					padding 10px
+					display block
+					width 300px
+					max-width 100%
+				ul
+					position static
+					width 100%
+					li
+						display block
+						width 100%
+						a:hover
+							background-color os_green
+		a#nav-button
+			cursor pointer
+			float right
+			padding 10px
+			color black
+			background-color: #0e0e0e;
+			background-image: linear-gradient(to bottom, #151515, #040404);
+			background-repeat: repeat-x;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+			color: #ffffff;
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+			border-radius 2px
+			box-shadow none
+			position relative
+			top 25px
+			.icon-bar 
+				background-color: #f5f5f5;
+				border-radius: 1px;
+				box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+				display: block;
+				height: 2px;
+				width: 18px;
+				margin-bottom 3px
+				&:last-child
+					margin-bottom 0
+
+/*----------------------------------------------------------------
+	Sidebar
+-----------------------------------------------------------------*/
+.sidebar
+	width 27.5%
+	margin-left 20px
+	@media (max-width: maxWidth)
+		margin-right 10px
+	@media (max-width: 655px)
+		display none
+
+.right
+	float right
+
+
+/*----------------------------------------------------------------
+	 home page
+-----------------------------------------------------------------*/
+#home-page
+	max-width maxWidth
+	margin-left auto
+	margin-right auto
+	#latest-message
+		width 300px
+		float left
+		margin-right 20px
+		border-bottom 1px solid lightgray
+		margin-bottom 20px
+		overflow auto
+		h4
+			font-size 25px
+		@media (max-width: maxWidth)
+			margin-left 10px
+		@media (max-width: 600px)
+			width 95%
+	#primary main article
+		overflow auto
+		margin auto 10px
+		min-width 300px
+
+					
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;f
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+.entry-title
+	font-size 5rem
+
+#primary, #latest-message, #front-sidebar
+	margin-top 20px
+	
+.entry-header
+	margin-bottom 1em
+	
+.widget-title, #latest-message h4, #home-page .entry-title
+	background-color: black;
+	color: white;
+	font-size: 2.5rem !important;
+	padding: 5px 10px;
+
+#latest-message h4
+	margin-bottom 20px
+
+#content
+	#spotlight
+		max-width maxWidth
+		margin 0 auto
+		#welcome-box
+			background-color: rgba(212, 212, 212, 0.9);
+			border: 1px solid rgba(255, 255, 255, 0.3);
+			border-radius: 2px;
+			margin: 0 auto;
+			max-width: 100%;
+			padding: 10px;
+			position: relative;
+			top: -185px;
+			width: 600px;
+			h2
+				line-height: 2;
+				margin: 0;
+				text-align: center;
+				text-transform: uppercase;
+			@media screen and (max-width: 1000px)
+				top -150px
+			@media screen and (max-width: 760px)
+				top 0
+				background none
+				border none
+				
+#post-content
+.post-content
+#comments
+#disqus_thread
+.author-info
+	margin-bottom 20px
+	overflow auto
+
+.the-content
+	width 65%
+	@media (max-width: 655px)
+		width 95%
+	
+.left
+	float left
+	
+#post-content
+	border-bottom 1px solid lightgray
+	&:last-child
+		border-bottom none
+
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+//.page-content,
+//.entry-content,
+//.entry-summary {
+//	margin-top: 10px;
+//}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+Footer
+---------------------------------------------------------------*/
+#main-footer
+	width 100%
+	background-image url('img/bg/binding_dark.png')
+	min-height 60px
+	overflow auto
+	color os_white
+	.footer-content
+		padding-top 20px
+		> div
+			width 360px
+			float left
+			margin-right 40px
+			margin-bottom 20px
+			@media (max-width: maxWidth)
+				max-width 90%
+				margin auto 20px 30px
+			@media (max-width: 853px)
+				width 90%
+	#site-info
+		clear both
+	a
+		color os_light_green
+
+
+/*--------------------------------------------------------------
+## Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+/* ------------------- Simple calendar style -----------------------------------*/
+.simcal-nav-button
+	font-size 2.5rem !important
+	
+.simcal-nav.simcal-current > h3
+	font-size 3rem
+	
+.simcal-default-calendar-grid .simcal-events
+	font-size 1.4rem !important
+	
+.simcal-default-calendar-list .simcal-event-details
+	font-size inherit !important
+	line-height 1 !important
+	
+.simcal-default-calendar-list ul.simcal-events
+	margin 0 !important
+	
+// ------------- Social icons ---------------------
+
+.genericon
+	font-size 5rem !important
+	
+.um
+	opacity: 1 !important;
