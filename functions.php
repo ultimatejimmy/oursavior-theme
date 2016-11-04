@@ -107,15 +107,6 @@ function dm_com_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-    register_sidebar(array(
-		'name' => 'Left Column Home Page',
-		'id'   => 'left-column-front',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s left-column-front" class="%2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4>',
-		'after_title'   => '</h4>'
-	));
 	register_sidebar(array(
 		'name' => 'Left Footer',
 		'id'   => 'left-footer',
@@ -227,3 +218,13 @@ function jeherve_contact_info_google_key() {
         return 'AIzaSyBdyQ4yTEjLWyamnClU28m0YrQi7V3zzhs'; // Your API Key.
 }
 add_filter( 'jetpack_google_maps_api_key', 'jeherve_contact_info_google_key' );
+
+// Show parent featured image for children by default 
+if ( $post->post_parent )
+    $post_id = $post->post_parent;
+else
+    $post_id = $post->ID;
+
+if ( $thumbnail = get_the_post_thumbnail( $post_id, 'post-thumbnail' ) ) {
+    echo $thumbnail;
+}
