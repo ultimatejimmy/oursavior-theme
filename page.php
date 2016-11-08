@@ -12,8 +12,16 @@
  * @package dm.com
  */
 
-get_header(); ?>
+get_header(); 
+if ( $post->post_parent )
+    $post_id = $post->post_parent;
+else
+    $post_id = $post->ID;
 
+if ( $thumbnail = get_the_post_thumbnail( $post_id, 'post-thumbnail' ) ) {
+    echo $thumbnail;
+}
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="the-content left">

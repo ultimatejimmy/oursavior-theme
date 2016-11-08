@@ -41,7 +41,7 @@ function dm_com_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 940, 275, true);
+//    set_post_thumbnail_size( 940, 275, true);
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'dm-com' ),
@@ -219,12 +219,3 @@ function jeherve_contact_info_google_key() {
 }
 add_filter( 'jetpack_google_maps_api_key', 'jeherve_contact_info_google_key' );
 
-// Show parent featured image for children by default 
-if ( $post->post_parent )
-    $post_id = $post->post_parent;
-else
-    $post_id = $post->ID;
-
-if ( $thumbnail = get_the_post_thumbnail( $post_id, 'post-thumbnail' ) ) {
-    echo $thumbnail;
-}
