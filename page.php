@@ -22,6 +22,7 @@ if ( $thumbnail = get_the_post_thumbnail( $post_id, 'post-thumbnail' ) ) {
     echo $thumbnail;
 }
 ?>
+<!-- the above makes the parent page's featured image show up when there isn't one set on this page -->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="the-content left">
