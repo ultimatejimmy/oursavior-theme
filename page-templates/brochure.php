@@ -10,8 +10,12 @@
 
 
 get_header(); ?>
-	
-		<div id="primary" class="content-area">
+	<div id="brochure-main">
+
+</div>
+		
+		<div class="brochure-wrapper">
+			<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -23,10 +27,7 @@ get_header(); ?>
 			</main>
 			<!-- #main -->
 		</div>
-
-	
 	<!-- #primary -->
-		<div class="brochure-wrapper">
 			<div class="brochure-content">
 				<div>
 					<?php dynamic_sidebar( 'brochure-left' ); ?>

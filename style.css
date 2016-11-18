@@ -41,7 +41,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import url("../fonts/font-awesome.css");
+@import url("fonts/font-awesome.css");
 [class*="entypo-"]:before,
 [class*="fontawesome-"]:before,
 [class*="fa-"]:before {
@@ -254,7 +254,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1.8rem;
   line-height: 1.5;
 }
@@ -531,7 +531,7 @@ textarea {
 #main-header a {
   color: #0e4431;
 }
-@media (min-width: 750px) {
+@media (min-width: 1100px) {
   nav#site-navigation {
     float: right;
     margin-top: 20px;
@@ -554,7 +554,7 @@ textarea {
     padding: 10px;
     font-size: 1.8rem;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
     text-transform: uppercase;
   }
   nav#site-navigation ul a:hover {
@@ -599,7 +599,7 @@ textarea {
     cursor: pointer;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 1100px) {
   nav#site-navigation > div {
     background-color: #000;
     clear: both;
@@ -817,6 +817,12 @@ f
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.header-img {
+  width: 100%;
+}
+.header-img img {
+  width: 100%;
+}
 .entry-title {
   font-size: 5rem;
 }
