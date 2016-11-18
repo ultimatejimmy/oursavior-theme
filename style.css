@@ -91,6 +91,9 @@ section,
 summary {
   display: block;
 }
+figcaption {
+  line-height: 1.2;
+}
 audio,
 canvas,
 progress,
@@ -154,6 +157,9 @@ svg:not(:root) {
 }
 figure {
   margin: 1em 40px;
+}
+.gallery-columns-4 .gallery-item {
+  max-width: 18% !important;
 }
 hr {
   box-sizing: content-box;
@@ -475,6 +481,11 @@ textarea {
   -ms-transition: outline 0.55s ease;
   -o-transition: outline 0.55s ease;
   transition: outline 0.55s ease;
+}
+@media (max-width: 400px) {
+  #top-bar-container #search-bar input#search {
+    width: 150px;
+  }
 }
 #top-bar-container #search-bar input#search:-moz-placeholder,
 #top-bar-container #search-bar input#search::-moz-placeholder,
@@ -1085,6 +1096,11 @@ object {
 }
 .um {
   opacity: 1 !important;
+}
+.staff-name {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0e4431;
 }
 @-moz-keyframes fadeIn {
   0% {

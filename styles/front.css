@@ -21,12 +21,8 @@ body {
 }
 @media (max-width: 700px) {
   body {
-    background-image: url("../img/bg/church-main-sm.jpg");
-  }
-}
-@media (max-width: 700px) {
-  body {
     background-image: url("../img/bg/church-main-mobile.jpg");
+    background-size: auto;
   }
 }
 @media (min-width: 800px) {

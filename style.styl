@@ -82,7 +82,9 @@ section,
 summary {
 	display: block;
 }
-
+figcaption
+	line-height 1.2
+	
 audio,
 canvas,
 progress,
@@ -162,7 +164,9 @@ svg:not(:root) {
 figure {
 	margin: 1em 40px;
 }
-
+.gallery-columns-4 .gallery-item
+	max-width 18% !important
+	
 hr {
 	box-sizing: content-box;
 	height: 0;
@@ -530,6 +534,8 @@ textarea {
 		margin-right 10px
 		input#search
 			width: 200px;
+			@media (max-width: 400px)
+				width 150px
 			height: 30px;
 			background-color #454545;
 			border: none;
@@ -1129,3 +1135,9 @@ object {
 	
 .um
 	opacity: 1 !important;
+	
+// ---------- Staff name ------------------------
+.staff-name
+	letter-spacing: .5px;
+	text-transform: uppercase;
+	color: os_green;
