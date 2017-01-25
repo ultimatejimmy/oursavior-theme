@@ -13,6 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 	<div class="right sidebar widget-area" role="complementary">
 		<?php get_template_part( 'template-parts/content', 'login' ); ?>
+			<div class="clear"></div>
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
 	<!-- #secondary -->
