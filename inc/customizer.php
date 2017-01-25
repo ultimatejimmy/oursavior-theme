@@ -21,12 +21,6 @@ function oursavior_theme_customizer( $wp_customize ) {
         	'description' => 'The title for the brochure page and the text for the top bar', // The description of section
     	)
 	);
-	$wp_customize->add_section( 
-		'oursavior-hpimage', array(
-        	'title'     => 'Home Page Feature Image',
-        	'priority'  => 201
-    	)
-	);
 	$wp_customize->add_setting( 
 		'frontpage_title', array(
     		'default' => get_bloginfo(),
@@ -51,12 +45,7 @@ function oursavior_theme_customizer( $wp_customize ) {
 			'transport'    => 'postMessage'
 		)
     );
-	$wp_customize->add_control( 
-		'frontpage_title', array(
-    		'label' => 'Front (brochure) page title',
-    		'section' => 'custom_text',
-		)
-	);
+	
 	$wp_customize->add_control( 
 		'oursavior_topbar', array(
     		'label' => 'Top bar text',
@@ -69,17 +58,7 @@ function oursavior_theme_customizer( $wp_customize ) {
     		'section' => 'custom_text',
 		)
 	);
-	$wp_customize->add_control( 
-		new WP_Customize_Image_Control(
-        	$wp_customize,
-        	'oursavior_hpimage',
-				array(
-					'label'    => 'Featured Homepage Image',
-					'settings' => 'oursavior_hpimage',
-					'section'  => 'oursavior-hpimage'
-				)
-    	)
-	);
+	
 }
 add_action( 'customize_register', 'oursavior_theme_customizer', 11 );
 /**

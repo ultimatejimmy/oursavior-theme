@@ -19,11 +19,25 @@
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato:400,400i,700" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato:400,400i,700" rel="stylesheet">
 		<?php wp_head(); ?>
 			<?php if(is_page_template( 'page-templates/brochure.php' )) { ?>
 				<link href='<?php echo get_template_directory_uri(); ?>/styles/front.css' rel='stylesheet' type='text/css'>
 				<?php } ?>
+					<script>
+						(function (i, s, o, g, r, a, m) {
+							i['GoogleAnalyticsObject'] = r;
+							i[r] = i[r] || function () {
+								(i[r].q = i[r].q || []).push(arguments)
+							}, i[r].l = 1 * new Date();
+							a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+							a.async = 1;
+							a.src = g;
+							m.parentNode.insertBefore(a, m)
+						})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+						ga('create', 'UA-7035914-9', 'auto');
+						ga('send', 'pageview');
+					</script>
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -36,16 +50,12 @@
 					<?php } else { ?>
 						<header id="masthead" class="site-header not-front" role="banner">
 							<?php } ?>
-
 								<div id="top-bar-container">
 									<div id="top-bar">
-										<div id="search-bar">
-											<span class="icon fa-search"></span>
+										<div id="search-bar"> <span class="icon fa-search"></span>
 											<?php get_search_form() ?>
 										</div>
-										<div id="location">
-											<a href="<?php echo get_theme_mod( 'oursavior_visitLink' ); ?>" class="fontawesome-map-marker button"> Visit</a>
-										</div>
+										<div id="location"> <a href="<?php echo get_theme_mod( 'oursavior_visitLink' ); ?>" class="fontawesome-map-marker button"> Visit</a> </div>
 										<div id="top-bar-text">
 											<?php echo get_theme_mod( 'oursavior_topbar' ); ?>
 										</div>
@@ -60,16 +70,11 @@
 												<?php } ?>
 									</a>
 									<nav id="site-navigation" class="main-navigation" role="navigation">
-										<a type="button" id="nav-button">
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-											<span class="icon-bar"></span>
-										</a>
+										<a type="button" id="nav-button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
 										<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 									</nav>
 								</div>
 								<!--/ #site-navigation -->
 						</header>
 						<!--/ #masthead -->
-
 						<div id="content" class="site-content">

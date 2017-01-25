@@ -214,3 +214,21 @@ function jeherve_contact_info_google_key() {
 }
 add_filter( 'jetpack_google_maps_api_key', 'jeherve_contact_info_google_key' );
 
+function wpdocs_excerpt_more( $more ) {
+    return sprintf( '... <a class="read-more" href="%1$s">%2$s</a>',
+        get_permalink( get_the_ID() ),
+        __( 'Read More »', 'textdomain' )
+    );
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+function modify_contact_methods($profile_fields) {
+
+	$profile_fields['title'] = 'Title';
+    return $profile_fields;
+}
+add_filter('user_contactmethods', 'modify_contact_methods');
+
+add_filter( 'mpp_avatar_override', '__return_true' );
+
+// Custom login

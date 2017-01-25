@@ -13,47 +13,47 @@
  */
 
 get_header(); ?>
-<div id="spotlight">
-			<img src="<?php echo get_theme_mod( 'oursavior_hpimage' );  ?>">
+	<div id="spotlight">
+		<img src="<?php echo get_theme_mod( 'oursavior_hpimage' );  ?>">
 
-		</div>
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+	</div>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-            <?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-                <?php if ( is_home() && ! is_front_page() ) : ?>
-                    <header>
-                        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                    </header>
-                    <?php endif; ?>
-                        <?php get_sidebar(); ?>
-                            <?php /* Start the Loop */ ?>
-                                <?php while ( have_posts() ) : the_post(); ?>
-                                    <div id="post-content">
-                                            <?php
+				<?php if ( is_home() && ! is_front_page() ) : ?>
+					<header>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					</header>
+					<?php endif; ?>
+						<?php get_sidebar(); ?>
+							<?php /* Start the Loop */ ?>
+								<?php while ( have_posts() ) : the_post(); ?>
+									<div class="post-content">
+										<?php
 
 					/*
 					 * Include the Post-Format-specific template for the content.
 					 */
 					get_template_part( 'template-parts/content', get_post_format() );
 				?>
-                                    </div>
-                                    <?php endwhile; ?>
+									</div>
+									<?php endwhile; ?>
 
-                                        <?php the_posts_navigation(); ?>
+										<?php the_posts_navigation(); ?>
 
-                                            <?php else : ?>
+											<?php else : ?>
 
-                                                <?php get_template_part( 'template-parts/content', 'none' ); ?>
+												<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-                                                    <?php endif; ?>
-
-
-        </main>
-        <!-- #main -->
-    </div>
-    <!-- #primary -->
+													<?php endif; ?>
 
 
-    <?php get_footer(); ?>
+		</main>
+		<!-- #main -->
+	</div>
+	<!-- #primary -->
+
+
+	<?php get_footer(); ?>

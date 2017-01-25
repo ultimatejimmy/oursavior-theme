@@ -9,35 +9,31 @@
  */
 
 ?>
+	</div>
+	<!-- #content -->
+	<footer id="main-footer" class="site-footer" role="contentinfo">
+		<div class="footer-content">
+			<div>
+				<?php dynamic_sidebar( 'left-footer' ); ?>
+			</div>
+			<div>
+				<?php dynamic_sidebar( 'middle-footer' ); ?>
+			</div>
+			<div>
+				<?php dynamic_sidebar( 'right-footer' ); ?>
+			</div>
+		</div>
+		<div id="site-info">
+			<p id="copyright"> &copy;
+				<?php echo date( "Y") ?> Our Savior Lutheran Church, Grafton, WI&nbsp;&nbsp;&nbsp;</p>
+		</div>
+		<!-- .site-info -->
+	</footer>
+	<!-- #colophon -->
+	</div>
+	<!-- #page -->
+	<?php wp_footer(); ?>
+		</body>
+		<script src="<?php echo get_template_directory_uri(); ?>/js/login.js"></script>
 
-    </div>
-    <!-- #content -->
-
-    <footer id="main-footer" class="site-footer" role="contentinfo">
-        <div class="footer-content">
-            <div>
-                <?php dynamic_sidebar( 'left-footer' ); ?>
-            </div>
-            <div>
-                <?php dynamic_sidebar( 'middle-footer' ); ?>
-            </div>
-            <div>
-                <?php dynamic_sidebar( 'right-footer' ); ?>
-            </div>
-
-        </div>
-        <div id="site-info">
-            <p id="copyright"> &copy;
-                <?php echo date( "Y") ?> Our Savior Lutheran Church, Grafton, WI&nbsp;&nbsp;&nbsp;</p>
-        </div>
-        <!-- .site-info -->
-    </footer>
-    <!-- #colophon -->
-    </div>
-    <!-- #page -->
-
-    <?php wp_footer(); ?>
-
-        </body>
-
-        </html>
+		</html>

@@ -9,16 +9,16 @@
 
 ?>
 
-    <?php if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ): ?>
-        <a href="<?php comments_link(); ?>">
-            <?php comments_number( "Leave a comment", 'hi'); ?>
-        </a>
+	<?php if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ): ?>
+		<a href="<?php comments_link(); ?>">
+			<?php comments_number( "Leave a comment"); ?>
+		</a>
 
-        <?php else: ?>
+		<?php else: ?>
 
-            <?php endif; ?>
-                <br> Posted in:
-                <?php the_category(', '); ?>
+			<?php endif; ?>
+				<br> Posted in:
+				<?php the_category(', '); ?>
 
 
-                    <?php the_tags(); ?>
+					<?php the_tags(); ?>
