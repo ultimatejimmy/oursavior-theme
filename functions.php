@@ -241,14 +241,14 @@ function myplugin_register_form() {
 	<div class="login_row first">
 		<label for="first_name">
 			<?php _e( 'First Name', 'mydomain' ) ?>
-				<br />
-				<input type="text" name="first_name" id="first_name" class="input" value="<?php echo esc_attr( wp_unslash( $first_name ) ); ?>" size="25" /> </label>
+				<br>
+				<input type="text" name="first_name" id="first_name" class="input" value="<?php echo esc_attr( wp_unslash( $first_name ) ); ?>" required /> </label>
 	</div>
 	<div class="last login_row">
 		<label for="last_name">
 			<?php _e( 'Last Name', 'mydomain' ) ?>
-				<br />
-				<input type="text" name="last_name" id="last_name" class="input" value="<?php echo esc_attr( wp_unslash( $last_name ) ); ?>" size="25" /> </label>
+				<br>
+				<input type="text" name="last_name" id="last_name" class="input" value="<?php echo esc_attr( wp_unslash( $last_name ) ); ?>" required /> </label>
 	</div>
 	<?php
     }

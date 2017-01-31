@@ -31,10 +31,12 @@
 										<div class="username login_row">
 											<label for="user_login">
 												<?php _e('Username'); ?>: </label>
+											<br>
 											<input type="text" name="log" value="<?php echo esc_attr(stripslashes($user_login)); ?>" id="user_login" tabindex="11" /> </div>
 										<div class="password login_row">
 											<label for="user_pass">
 												<?php _e('Password'); ?>: </label>
+											<br>
 											<input type="password" name="pwd" value="" id="user_pass" tabindex="12" /> </div>
 										<div class="login_fields login_row">
 											<div class="rememberme">
@@ -54,11 +56,13 @@
 						<div class="username login_row">
 							<label for="user_login">
 								<?php _e('Username'); ?>: </label>
-							<input type="text" name="user_login" value="<?php echo esc_attr(stripslashes($user_login)); ?>" id="user_login" tabindex="101" /> </div>
+							<br>
+							<input type="text" name="user_login" value="<?php echo esc_attr(stripslashes($user_login)); ?>" id="user_login" tabindex="101" required /> </div>
 						<div class="email login_row">
 							<label for="user_email">
 								<?php _e('Your Email'); ?>: </label>
-							<input type="text" name="user_email" value="<?php echo esc_attr(stripslashes($user_email)); ?>" id="user_email" tabindex="102" /> </div>
+							<br>
+							<input type="text" name="user_email" value="<?php echo esc_attr(stripslashes($user_email)); ?>" id="user_email" tabindex="102" required /> </div>
 						<div class="login_fields login_row">
 							<?php do_action('register_form'); ?>
 								<input type="submit" name="user-submit" value="<?php _e('Sign up!'); ?>" class="user-submit" tabindex="103" />

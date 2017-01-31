@@ -45,7 +45,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 [class*="entypo-"]:before,
 [class*="fontawesome-"]:before,
 [class*="fa-"]:before {
-  font-family: 'FontAwesome', sans-serif;
+  font-family: 'FontAwesome', sans-serif !important;
 }
 /*--------------------------------------------------------------
 # Normalize
@@ -977,6 +977,11 @@ Footer
     width: 90%;
   }
 }
+#main-footer .footer-content #login-button {
+  display: inline-block;
+  color: #fffdfa;
+  margin-bottom: 10px;
+}
 #main-footer #site-info {
   clear: both;
 }
@@ -1254,14 +1259,6 @@ html body ul.tabs_login li.active_login a {
 .login_row label {
   float: left;
   clear: none;
-  width: 35%;
-}
-.login_row input {
-  float: left;
-  clear: none;
-  width: 200px;
-  padding: 2px 3px;
-  color: #777;
 }
 .rememberme {
   overflow: hidden;
