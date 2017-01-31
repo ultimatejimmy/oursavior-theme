@@ -1158,7 +1158,7 @@ ul.tabs_login {
   margin: 20px 0 0 0;
   position: relative;
   list-style: none;
-  z-index: 1000;
+  z-index: 10;
   float: left;
 }
 ul.tabs_login li {
@@ -1221,7 +1221,6 @@ html body ul.tabs_login li.active_login a {
   -khtml-border-radius-topright: 10px;
   -moz-border-radius-topright: 10px;
   border-top-right-radius: 10px;
-  z-index: 999;
   float: left;
   width: 100%;
   top: -1px;

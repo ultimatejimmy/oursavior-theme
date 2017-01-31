@@ -19,7 +19,7 @@
 				<div id="tab1_login" class="tab_content_login">
 					<?php $register = $_GET['register']; $reset = $_GET['reset']; if ($register == true) { ?>
 						<h3>Success!</h3>
-						<p>Check your email for the password and then return to log in.</p>
+						<p>Your registration is waiting to be approved by the administrator. You will receive an email with further instructions upon approval.</p>
 						<?php } elseif ($reset == true) { ?>
 							<h3>Success!</h3>
 							<p>Check your email to reset your password.</p>
@@ -52,6 +52,8 @@
 				<div id="tab2_login" class="tab_content_login" style="display:none;">
 					<h3>Register for this site!</h3>
 					<p>Sign up now for the good stuff.</p>
+					<p>Your regis</p>
+					<p></p>
 					<form method="post" action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" class="wp-user-form">
 						<div class="username login_row">
 							<label for="user_login">
