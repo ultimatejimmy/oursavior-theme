@@ -1,13 +1,13 @@
 <?php
 /**
- * dm.com functions and definitions.
+ * oursavior functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package dm.com
  */
 
-if ( ! function_exists( 'dm_com_setup' ) ) :
+if ( ! function_exists( 'oursavior_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'dm_com_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function dm_com_setup() {
+function oursavior_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on dm.com, use a find and replace
-	 * to change 'dm-com' to the name of your theme in all the template files.
+	 * to change 'oursavior' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'dm-com', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'oursavior', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ function dm_com_setup() {
 //    set_post_thumbnail_size( 940, 275, true);
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'dm-com' ),
+		'primary' => esc_html__( 'Primary Menu', 'oursavior' ),
 	) );
 
 	/*
@@ -72,8 +72,8 @@ function dm_com_setup() {
 	) );
 
 }
-endif; // dm_com_setup
-add_action( 'after_setup_theme', 'dm_com_setup' );
+endif; // oursavior_setup
+add_action( 'after_setup_theme', 'oursavior_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -82,19 +82,19 @@ add_action( 'after_setup_theme', 'dm_com_setup' );
  *
  * @global int $content_width
  */
-function dm_com_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'dm_com_content_width', 640 );
+function oursavior_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'oursavior_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'dm_com_content_width', 0 );
+add_action( 'after_setup_theme', 'oursavior_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function dm_com_widgets_init() {
+function oursavior_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'dm-com' ),
+		'name'          => esc_html__( 'Sidebar', 'oursavior' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -157,23 +157,23 @@ function dm_com_widgets_init() {
 		'after_title'   => '</h3>'
 	));
 }
-add_action( 'widgets_init', 'dm_com_widgets_init' );
+add_action( 'widgets_init', 'oursavior_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function dm_com_scripts() {
-	wp_enqueue_style( 'dm-com-style', get_stylesheet_uri() );
+function oursavior_scripts() {
+	wp_enqueue_style( 'oursavior-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'dm-com-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'oursavior-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'dm-com-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'oursavior-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'dm_com_scripts' );
+add_action( 'wp_enqueue_scripts', 'oursavior_scripts' );
 
 /** * Custom template tags for this theme. */ require get_template_directory() . '/inc/template-tags.php';
 
@@ -232,24 +232,48 @@ add_filter('user_contactmethods', 'modify_contact_methods');
 add_filter( 'mpp_avatar_override', '__return_true' );
 
 // Custom login
-function login_failed() {
-	  $login_page  = home_url( '/login/' );
-	  wp_redirect( $login_page . '?login=failed' );
-	  exit;
-	}
-	add_action( 'wp_login_failed', 'login_failed' );
+add_action( 'register_form', 'myplugin_register_form' );
+function myplugin_register_form() {
 
-	function verify_username_password( $user, $username, $password ) {
-	  $login_page  = home_url( '/login/' );
-		if( $username == "" || $password == "" ) {
-			wp_redirect( $login_page . "?login=empty" );
-			exit;
-		}
-	}
-	add_filter( 'authenticate', 'verify_username_password', 1, 3);
-	function logout_page() {
-	  $login_page  = home_url( '/login/' );
-	  wp_redirect( $login_page . "?login=false" );
-	  exit;
-	}
-	add_action('wp_logout','logout_page');
+    $first_name = ( ! empty( $_POST['first_name'] ) ) ? trim( $_POST['first_name'] ) : '';
+        
+        ?>
+	<div class="login_row first">
+		<label for="first_name">
+			<?php _e( 'First Name', 'mydomain' ) ?>
+				<br />
+				<input type="text" name="first_name" id="first_name" class="input" value="<?php echo esc_attr( wp_unslash( $first_name ) ); ?>" size="25" /> </label>
+	</div>
+	<div class="last login_row">
+		<label for="last_name">
+			<?php _e( 'Last Name', 'mydomain' ) ?>
+				<br />
+				<input type="text" name="last_name" id="last_name" class="input" value="<?php echo esc_attr( wp_unslash( $last_name ) ); ?>" size="25" /> </label>
+	</div>
+	<?php
+    }
+
+    //2. Add validation. In this case, we make sure first_name is required.
+    add_filter( 'registration_errors', 'myplugin_registration_errors', 10, 3 );
+    function myplugin_registration_errors( $errors, $sanitized_user_login, $user_email ) {
+        
+        if ( empty( $_POST['first_name'] ) || ! empty( $_POST['first_name'] ) && trim( $_POST['first_name'] ) == '' ) {
+            $errors->add( 'first_name_error', __( '<strong>ERROR</strong>: You must include a first name.', 'mydomain' ) );
+        }
+		if ( empty( $_POST['last_name'] ) || ! empty( $_POST['last_name'] ) && trim( $_POST['last_name'] ) == '' ) {
+            $errors->add( 'last_name_error', __( '<strong>ERROR</strong>: You must include a last name.', 'mydomain' ) );
+        }
+
+        return $errors;
+    }
+
+    //3. Finally, save our extra registration user meta.
+    add_action( 'user_register', 'myplugin_user_register' );
+    function myplugin_user_register( $user_id ) {
+        if ( ! empty( $_POST['first_name'] ) ) {
+            update_user_meta( $user_id, 'first_name', trim( $_POST['first_name'] ) );
+        }
+		if ( ! empty( $_POST['last_name'] ) ) {
+            update_user_meta( $user_id, 'last_name', trim( $_POST['last_name'] ) );
+        }
+    }
