@@ -986,6 +986,10 @@ Footer
 				margin auto 20px 30px
 			@media (max-width: 853px)
 				width 90%
+		#login-button
+			display inline-block
+			color os_white
+			margin-bottom 10px
 	#site-info
 		clear both
 	a
@@ -1182,7 +1186,7 @@ ul.tabs_login {
   margin: 20px 0 0 0;
   position: relative;
   list-style: none;
-  z-index: 1000;
+  z-index: 10;
   float: left;
 }
 ul.tabs_login li {
@@ -1245,7 +1249,6 @@ html body ul.tabs_login li.active_login a {
   -khtml-border-radius-topright: 10px;
   -moz-border-radius-topright: 10px;
   border-top-right-radius: 10px;
-  z-index: 999;
   float: left;
   width: 100%;
   top: -1px;
@@ -1274,33 +1277,21 @@ html body ul.tabs_login li.active_login a {
   padding: 0;
 }
 /* form elements */
-.username,
-.password,
-.login_fields,
- .fname,
-.lname {
+.login_row {
   margin: 7px 0 0 0;
   overflow: hidden;
   width: 100%;
 }
-.username label,
-.password label,
- .fname label,
-.lname label {
+.login_row label {
   float: left;
   clear: none;
-  width: 35%;
 }
-.username input,
-.password input,
-.lname input, 
-.fname input {
-  float: left;
-  clear: none;
-  width: 200px;
-  padding: 2px 3px;
-  color: #777;
-}
+//.login_row input {
+//  float: left;
+//  clear: none;
+//  padding: 2px 3px;
+//  color: #777;
+//}
 .rememberme {
   overflow: hidden;
   width: 100%;

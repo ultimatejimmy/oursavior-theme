@@ -12,7 +12,7 @@
 	</div>
 	<!-- #content -->
 	<footer id="main-footer" class="site-footer" role="contentinfo">
-		<div class="footer-content">
+		<div class="footer-content"> <a class="button fa-lock" id="login-button" href="<?php bloginfo('url'); ?>/login"> Members Login</a>
 			<div>
 				<?php dynamic_sidebar( 'left-footer' ); ?>
 			</div>

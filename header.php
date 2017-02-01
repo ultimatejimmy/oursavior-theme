@@ -24,20 +24,6 @@
 			<?php if(is_page_template( 'page-templates/brochure.php' )) { ?>
 				<link href='<?php echo get_template_directory_uri(); ?>/styles/front.css' rel='stylesheet' type='text/css'>
 				<?php } ?>
-					<script>
-						(function (i, s, o, g, r, a, m) {
-							i['GoogleAnalyticsObject'] = r;
-							i[r] = i[r] || function () {
-								(i[r].q = i[r].q || []).push(arguments)
-							}, i[r].l = 1 * new Date();
-							a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-							a.async = 1;
-							a.src = g;
-							m.parentNode.insertBefore(a, m)
-						})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-						ga('create', 'UA-7035914-9', 'auto');
-						ga('send', 'pageview');
-					</script>
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -55,7 +41,7 @@
 										<div id="search-bar"> <span class="icon fa-search"></span>
 											<?php get_search_form() ?>
 										</div>
-										<div id="location"> <a href="<?php echo get_theme_mod( 'oursavior_visitLink' ); ?>" class="fontawesome-map-marker button"> Visit</a> </div>
+										<div id="location"> <a href="<?php echo get_theme_mod( 'oursavior_visitLink' ); ?>" target="_blank" class="fa-map-marker button"> Visit</a> </div>
 										<div id="top-bar-text">
 											<?php echo get_theme_mod( 'oursavior_topbar' ); ?>
 										</div>
