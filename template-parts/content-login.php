@@ -52,7 +52,7 @@
 				<div id="tab2_login" class="tab_content_login" style="display:none;">
 					<h3>Register for this site!</h3>
 					<p>Sign up now for the good stuff.</p>
-					<p>Your regis</p>
+					<p>Your registration will sent to the site administrator for approval.</p>
 					<p></p>
 					<form method="post" action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" class="wp-user-form">
 						<div class="username login_row">
