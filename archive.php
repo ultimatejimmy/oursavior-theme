@@ -8,24 +8,20 @@
  */
 
 get_header(); ?>
-
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-
-            <?php if ( have_posts() ) : ?>
-
-                <header class="page-header">
-                    <?php
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<?php if ( have_posts() ) : ?>
+				<header class="page-header">
+					<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-                </header>
-                <!-- .page-header -->
-                <?php get_sidebar(); ?>
-                    <?php /* Start the Loop */ ?>
-                        <?php while ( have_posts() ) : the_post(); ?>
-                            <div id="post-content">
-                                <?php
+				?> </header>
+				<!-- .page-header -->
+				<?php get_sidebar(); ?>
+					<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
+							<div class="post-content">
+								<?php
 
 					/*
 					 * Include the Post-Format-specific template for the content.
@@ -34,21 +30,14 @@ get_header(); ?>
 					 */
 					get_template_part( 'template-parts/content', get_post_format() );
 				?>
-                            </div>
-                            <?php endwhile; ?>
-
-                                <?php the_posts_navigation(); ?>
-
-                                    <?php else : ?>
-
-                                        <?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-                                            <?php endif; ?>
-
-        </main>
-        <!-- #main -->
-    </div>
-    <!-- #primary -->
-
-
-    <?php get_footer(); ?>
+							</div>
+							<?php endwhile; ?>
+								<?php the_posts_navigation(); ?>
+									<?php else : ?>
+										<?php get_template_part( 'template-parts/content', 'none' ); ?>
+											<?php endif; ?>
+		</main>
+		<!-- #main -->
+	</div>
+	<!-- #primary -->
+	<?php get_footer(); ?>
