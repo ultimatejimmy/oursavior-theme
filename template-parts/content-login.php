@@ -27,32 +27,12 @@
 								<h3>Have an account?</h3>
 								<p>Log in or sign up! It&rsquo;s fast &amp; <em>free!</em></p>
 								<?php } ?>
-									<form method="post" action="<?php bloginfo('url') ?>/wp-login.php" class="wp-user-form">
-										<div class="username login_row">
-											<label for="user_login">
-												<?php _e('Username'); ?>: </label>
-											<br>
-											<input type="text" name="log" value="<?php echo esc_attr(stripslashes($user_login)); ?>" id="user_login" tabindex="11" /> </div>
-										<div class="password login_row">
-											<label for="user_pass">
-												<?php _e('Password'); ?>: </label>
-											<br>
-											<input type="password" name="pwd" value="" id="user_pass" tabindex="12" /> </div>
-										<div class="login_fields login_row">
-											<div class="rememberme">
-												<label for="rememberme">
-													<input type="checkbox" name="rememberme" value="forever" checked="checked" id="rememberme" tabindex="13" /> Remember me </label>
-											</div>
-											<?php do_action('login_form'); ?>
-												<input type="submit" name="user-submit" value="<?php _e('Login'); ?>" tabindex="14" class="user-submit" />
-												<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
-												<input type="hidden" name="user-cookie" value="1" /> </div>
-									</form>
+									<?php wp_login_form(); ?>
 				</div>
 				<div id="tab2_login" class="tab_content_login" style="display:none;">
 					<h3>Register for this site!</h3>
 					<p>Sign up now for the good stuff.</p>
-					<p>Your regis</p>
+					<p>Your registration will sent to the site administrator for approval.</p>
 					<p></p>
 					<form method="post" action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" class="wp-user-form">
 						<div class="username login_row">
