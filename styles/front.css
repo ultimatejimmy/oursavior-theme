@@ -2,7 +2,7 @@
 [class*="entypo-"]:before,
 [class*="fontawesome-"]:before,
 [class*="fa-"]:before {
-  font-family: 'FontAwesome', sans-serif;
+  font-family: 'FontAwesome', sans-serif !important;
 }
 /*----------------------------------------------------------------
 	 front page
@@ -100,6 +100,7 @@ body {
 .brochure-wrapper .brochure-content > div h3 {
   text-align: center;
   font-size: 3rem;
+  font-family: 'Josefin Sans', sans-serif;
 }
 @media (max-width: 1200px) {
   .brochure-wrapper .brochure-content > div {
