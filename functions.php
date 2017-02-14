@@ -277,3 +277,7 @@ function myplugin_register_form() {
             update_user_meta( $user_id, 'last_name', trim( $_POST['last_name'] ) );
         }
     }
+add_editor_style('https://fonts.googleapis.com/css?family=Josefin+Sans|Lato:400,400i,700');
+add_editor_style('style.css');
+
+?>
