@@ -74,7 +74,7 @@ body {
 .brochure-wrapper #primary {
   width: 1200px;
   max-width: 100%;
-  margin: auto;
+  margin: 25px auto auto;
   padding: 0 20px;
 }
 .brochure-wrapper #primary .entry-header {
