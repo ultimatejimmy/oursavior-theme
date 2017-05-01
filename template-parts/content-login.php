@@ -13,7 +13,7 @@
 			<ul class="tabs_login">
 				<li class="active_login"><a id="tab1_login">Login</a></li>
 				<li><a id="tab2_login">Register</a></li>
-				<li><a id="tab3_login">Forgot?</a></li>
+				<li><a href="<?php echo site_url() ?>/wp-login.php?action=lostpassword">Forgot?</a></li>
 			</ul>
 			<div class="tab_container_login">
 				<div id="tab1_login" class="tab_content_login">
@@ -56,7 +56,7 @@
 				<div id="tab3_login" class="tab_content_login" style="display:none;">
 					<h3>Lose something?</h3>
 					<p>Enter your username or email to reset your password.</p>
-					<form method="post" action="<?php echo site_url('wp-login.php?action=lostpassword', 'login_post') ?>" class="wp-user-form">
+					<form method="post" action="<?php echo site_url() ?>/wp-login.php?action=lostpassword&wpe-login=oursaviorgraft" class="wp-user-form">
 						<div class="username login_row">
 							<label for="user_login" class="hide">
 								<?php _e('Username or Email'); ?>: </label>
