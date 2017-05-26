@@ -193,7 +193,6 @@ button {
   overflow: visible;
 }
 .button {
-  color: #fffdfa;
   background-color: #1c8800;
   padding: 10px;
   border-radius: 2px;
@@ -201,6 +200,10 @@ button {
 .button:hover {
   opacity: 0.8;
   text-decoration: none;
+}
+.button *,
+.button {
+  color: #fffdfa;
 }
 button,
 select {
