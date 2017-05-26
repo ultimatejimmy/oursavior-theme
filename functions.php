@@ -262,7 +262,7 @@ function my_mce_before_init_insert_formats( $init_array ) {
 */
 		array(  
 			'title' => 'Button',  
-			'block' => 'span',  
+			'inline' => 'span',  
 			'classes' => 'button',
 			'wrapper' => false,
 			
