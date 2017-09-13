@@ -8,7 +8,7 @@
 	} 
 ?>
 	<div id="login-register-password">
-		<?php global $user_ID, $user_identity; get_currentuserinfo(); 
+		<?php global $user_ID, $user_identity; wp_get_current_user(); $register; $reset; 
 		if (!$user_ID) { ?>
 			<ul class="tabs_login">
 				<li class="active_login"><a id="tab1_login">Login</a></li>
@@ -74,7 +74,7 @@
 				<div class="sidebox">
 					<h3>Welcome, <?php echo $user_identity; ?></h3>
 					<div class="usericon">
-						<?php global $userdata; get_currentuserinfo(); echo get_avatar($userdata->ID, 60); ?>
+						<?php global $userdata; wp_get_current_user(); echo get_avatar($userdata->ID, 60); ?>
 					</div>
 					<div class="userinfo">
 						<p>You&rsquo;re logged in as <strong><?php echo $user_identity; ?></strong></p>
