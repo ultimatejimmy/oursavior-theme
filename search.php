@@ -9,21 +9,21 @@
 
 get_header(); ?>
 
-    <section id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-            <?php if ( have_posts() ) : ?>
+			<?php if ( have_posts() ) : ?>
 
-                <header class="page-header">
-                    <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'dm-com' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-                </header>
-                <!-- .page-header -->
-                <?php get_sidebar(); ?>
-                    <?php /* Start the Loop */ ?>
+				<header class="page-header">
+					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'dm-com' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				</header>
+				<!-- .page-header -->
+				<?php get_sidebar(); ?>
+					<?php /* Start the Loop */ ?>
 
-                        <?php while ( have_posts() ) : the_post(); ?>
-                            <div id="post-content">
-                                <?php
+						<?php while ( have_posts() ) : the_post(); ?>
+							<div class="post-content">
+								<?php
 				/**
 				 * Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file
@@ -31,21 +31,21 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', 'search' );
 				?>
-                            </div>
-                            <?php endwhile; ?>
+							</div>
+							<?php endwhile; ?>
 
-                                <?php the_posts_navigation(); ?>
+								<?php the_posts_navigation(); ?>
 
-                                    <?php else : ?>
+									<?php else : ?>
 
-                                        <?php get_template_part( 'template-parts/content', 'none' ); ?>
+										<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-                                            <?php endif; ?>
+											<?php endif; ?>
 
-        </main>
-        <!-- #main -->
-    </section>
-    <!-- #primary -->
+		</main>
+		<!-- #main -->
+	</section>
+	<!-- #primary -->
 
 
-    <?php get_footer(); ?>
+	<?php get_footer(); ?>

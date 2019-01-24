@@ -431,6 +431,7 @@ textarea {
   color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
+  max-width: 95%;
 }
 select {
   border: 1px solid #ccc;
@@ -707,6 +708,9 @@ textarea {
     margin-bottom: 0;
   }
 }
+.navigation.posts-navigation {
+  margin: 20px 0;
+}
 /*----------------------------------------------------------------
 	Sidebar
 -----------------------------------------------------------------*/
@@ -951,6 +955,13 @@ main#main {
 .post-content:last-child {
   border-bottom: none;
 }
+#post-content .wp-post-image,
+.post-content .wp-post-image {
+  margin-top: 15px;
+}
+.wp-post-image {
+  margin-bottom: 15px;
+}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -971,6 +982,9 @@ main#main {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+.page-header {
+  margin: 20px 0;
 }
 /*--------------------------------------------------------------
 Footer
@@ -1142,7 +1156,6 @@ object {
 .staff-name {
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #0e4431;
 }
 .author-info {
   margin: 0 20px 20px;
@@ -1317,6 +1330,9 @@ html body ul.tabs_login li.active_login a {
 }
 .usericon img {
   padding: 1px;
+}
+.grecaptcha-badge {
+  display: none;
 }
 @-moz-keyframes fadeIn {
   0% {

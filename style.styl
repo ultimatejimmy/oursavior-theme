@@ -490,6 +490,7 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	max-width 95%
 }
 
 select {
@@ -735,6 +736,9 @@ nav#site-navigation
 				margin-bottom 3px
 				&:last-child
 					margin-bottom 0
+					
+.navigation.posts-navigation
+	margin 20px 0
 
 /*----------------------------------------------------------------
 	Sidebar
@@ -953,7 +957,11 @@ main#main
 	border-bottom 1px solid lightgray
 	&:last-child
 		border-bottom none
+	.wp-post-image
+		margin-top 15px
 
+.wp-post-image
+	margin-bottom 15px
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -986,6 +994,9 @@ main#main
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.page-header
+	margin 20px 0
 
 /*--------------------------------------------------------------
 Footer
@@ -1170,7 +1181,6 @@ object {
 .staff-name
 	letter-spacing: .5px;
 	text-transform: uppercase;
-	color os_green
 
 // ----------- Author Page ------------------------
 .author-info
@@ -1348,3 +1358,6 @@ html body ul.tabs_login li.active_login a {
   padding: 1px;
 }
 
+// Hide Recaptcha badge
+.grecaptcha-badge
+	display none
