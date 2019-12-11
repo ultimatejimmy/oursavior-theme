@@ -1,10 +1,15 @@
 <div class="header-img">
 <?php
 
-if ( $post->post_parent )
-    $post_id = $post->post_parent;
+//if ( $post->post_parent )
+//    $post_id = $post->post_parent;
+//else
+//    $post_id = $post->ID;
+	
+if (has_post_thumbnail())
+	$post_id = $post->ID;
 else
-    $post_id = $post->ID;
+	$post_id = $post->post_parent;
 
 if ( $thumbnail = get_the_post_thumbnail( $post_id, 'post-thumbnail' ) ) {
     echo $thumbnail;
